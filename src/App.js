@@ -1,5 +1,6 @@
-import React,{useState} from 'react';
-import useTimerHooks from './hooks/useTimerHooks';
+import React from 'react';
+import useTimer from './hooks/useTimer';
+import useLocalStorage from './hooks/useLocalStorage';
 import './App.css';
 
 const initialState = {
@@ -9,16 +10,26 @@ const initialState = {
 }
 
 const App=()=> {
-  const [isTimerStart,setTimerStart] = useState(false);  
-  const [state] = useTimerHooks(initialState,isTimerStart);
+  const [{state:existingValue,setState}] = useLocalStorage('timing',initialState);
+  const [{state:isStartClicked,setState:setStartClicked}] = useLocalStorage('isStartClicked',false);
+  const [state] = useTimer(existingValue,isStartClicked);
+
+  window.onbeforeunload = ()=> {
+    setState(state)
+  }; 
+
+  const handleEndClick = () => {
+    setStartClicked(false);
+    alert('yahoo! great work for the day')
+  }
 
   return (
      <div>
        Here's wfh mate that can help you
       <div>
-       <button onClick={()=>setTimerStart(true)}>Start</button>
+       <button onClick={()=>setStartClicked(true)}>Start</button>
        <p>hh:{state?.hours}mm:{state?.minutes}ss:{state?.seconds}</p>
-       <button onClick={()=>alert('yahoo! great work for the day')}>End</button>
+       <button onClick={handleEndClick}>End</button>
        </div> 
      </div>
   );
