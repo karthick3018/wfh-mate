@@ -7,8 +7,14 @@ const BreakTimer = () => {
     seconds:0,
     minutes:5
   });
+  const [{state:existingValue,setState:setValueInLocalStore}] = useLocalStorage('breakTiming',breakTime);
+  const [{state:isStartClicked,setState:setStartClicked}] = useLocalStorage('isStartClicked',false);
   const [{state:isBreakStartClicked,setState:setBreakStartClicked}] = useLocalStorage('isBreakStartClicked',false);
-  const [state,setState] = useReduceTimer(breakTime,isBreakStartClicked)
+  const [state,setState] = useReduceTimer(existingValue,isBreakStartClicked)
+
+  window.onbeforeunload = ()=> {
+    setValueInLocalStore(state)
+  };
 
   const handleIncrement = () => {
     if(breakTime?.minutes<45)
@@ -24,6 +30,7 @@ const BreakTimer = () => {
   }
 
   const handleStart = () => {
+    setStartClicked(false)
     setBreakStartClicked(true);
     setState(breakTime)
   }
