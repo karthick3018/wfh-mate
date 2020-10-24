@@ -6,7 +6,7 @@ const initialState = {
   hours:0
 }
 
-const useTimerHooks = (existingState=initialState,isStart=true) => {
+const useTimer = (existingState=initialState,isStart=true) => {
 
   const [state, setState] = useState(()=>existingState);
 
@@ -40,4 +40,4 @@ const useTimerHooks = (existingState=initialState,isStart=true) => {
 
 }
 
-export default useTimerHooks;
+export default useTimer;
