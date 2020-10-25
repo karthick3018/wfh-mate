@@ -8,7 +8,6 @@ const BreakTimer = () => {
     minutes:5
   });
   const [{state:existingValue,setState:setValueInLocalStore}] = useLocalStorage('breakTiming',breakTime);
-  const [{state:isStartClicked,setState:setStartClicked}] = useLocalStorage('isStartClicked',false);
   const [{state:isBreakStartClicked,setState:setBreakStartClicked}] = useLocalStorage('isBreakStartClicked',false);
   const [state,setState] = useReduceTimer(existingValue,isBreakStartClicked)
 
@@ -30,7 +29,6 @@ const BreakTimer = () => {
   }
 
   const handleStart = () => {
-    setStartClicked(false)
     setBreakStartClicked(true);
     setState(breakTime)
   }
