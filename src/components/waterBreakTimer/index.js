@@ -9,7 +9,7 @@ const WaterBreakTimer = () => {
   });
   const [{state:existingValue,setState:setValueInLocalStore}] = useLocalStorage('waterBreakTiming',waterBreakTime);
   const [{state:isWaterBreakStartClicked,setState:setWaterBreakStartClicked}] = useLocalStorage('isWaterBreakStartClicked',false);
-  const [state,setState] = useReduceTimer(existingValue,isWaterBreakStartClicked)
+  const [state,setState] = useReduceTimer(existingValue,isWaterBreakStartClicked,true)
 
   window.onbeforeunload = ()=> {
     setValueInLocalStore(state)
