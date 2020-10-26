@@ -20,6 +20,7 @@ const WaterBreakTimer = () => {
       setState(prevBreakTime => {
         return {...prevBreakTime, minutes: waterBreakTime?.minutes,seconds:0};
       });
+      alert('hey karthick water break')
    }
   }, [state, setState, waterBreakTime])
 
