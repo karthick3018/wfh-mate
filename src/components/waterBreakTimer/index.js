@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import {WATER_TONE} from '../../helpers/sounds';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
 
@@ -20,9 +21,15 @@ const WaterBreakTimer = () => {
       setState(prevBreakTime => {
         return {...prevBreakTime, minutes: waterBreakTime?.minutes,seconds:0};
       });
+      playAudio()
       alert('hey karthick water break')
    }
   }, [state, setState, waterBreakTime])
+
+  const playAudio = () => {
+    const audio = new Audio(WATER_TONE);
+    audio.play();
+  }
 
   const handleIncrement = () => {
     if(waterBreakTime?.minutes<60)
