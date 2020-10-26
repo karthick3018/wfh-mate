@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
 
@@ -9,11 +9,19 @@ const WaterBreakTimer = () => {
   });
   const [{state:existingValue,setState:setValueInLocalStore}] = useLocalStorage('waterBreakTiming',waterBreakTime);
   const [{state:isWaterBreakStartClicked,setState:setWaterBreakStartClicked}] = useLocalStorage('isWaterBreakStartClicked',false);
-  const [state,setState] = useReduceTimer(existingValue,isWaterBreakStartClicked,true)
+  const [state,setState] = useReduceTimer(existingValue,isWaterBreakStartClicked)
 
   window.onbeforeunload = ()=> {
     setValueInLocalStore(state)
   };
+
+  useEffect(() => {
+    if(state?.seconds===0 && state?.minutes===0){
+      setState(prevBreakTime => {
+        return {...prevBreakTime, minutes: waterBreakTime?.minutes,seconds:0};
+      });
+   }
+  }, [state, setState, waterBreakTime])
 
   const handleIncrement = () => {
     if(waterBreakTime?.minutes<60)

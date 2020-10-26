@@ -5,11 +5,7 @@ const initialState = {
   minutes:0,
 }
 
-/**  
-* @params isWaterBreak is used to make a difference for break timer and water break timer
-**/
-
-const useReduceTimer = (existingState=initialState,isStart=true,isWaterBreak=false) => {
+const useReduceTimer = (existingState=initialState,isStart=true) => {
 
   const [state, setState] = useState(()=>existingState);
 
@@ -27,18 +23,12 @@ const useReduceTimer = (existingState=initialState,isStart=true,isWaterBreak=fal
             return {...prevState,seconds: 59,minutes:prevState.minutes-1};
           });
          }
-         // for water break
-         if(state?.seconds===0 && state?.minutes===0 && isWaterBreak){
-          setState({
-            seconds: 59,minutes:58
-          });
-         }
       },1000)
     }
 
     return () => clearTimeout(timer);
     
- },[state,isStart,isWaterBreak])
+ },[state,isStart])
 
  return [state,setState]
 
