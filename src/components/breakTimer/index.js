@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import Switch from '../../uiElements/switch';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
 
@@ -41,6 +42,8 @@ const BreakTimer = () => {
        <button onClick={()=>setBreakStartClicked(false)}>pause</button>
        <button onClick={()=>setBreakStartClicked(false)}>end</button>
        <p>mm:{state?.minutes}ss:{state?.seconds}</p>
+       <Switch label={"Show desktop notification"}/>
+       <Switch label={"Alert tone"}/>
     </div>
   )
 }

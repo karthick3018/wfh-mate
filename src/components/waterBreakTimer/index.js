@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import {WATER_TONE} from '../../helpers/sounds';
+import Switch from '../../uiElements/switch';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
 
@@ -55,6 +56,8 @@ const WaterBreakTimer = () => {
        <span onClick={handleIncrement}>+++</span><p>{waterBreakTime?.minutes}  mins</p><span onClick={handleDecrement}>---</span>
        <button onClick={handleStart}>start</button>
        <p>mm:{state?.minutes}ss:{state?.seconds}</p>
+       <Switch label={"Show desktop notification"}/>
+       <Switch label={"Alert tone"}/>
     </div>
   )
 }
