@@ -4,7 +4,9 @@ import Notification from 'react-web-notification';
 const DesktopNotification = ({
   title='WFH mate',
   body,
-  sound
+  sound,
+  showDesktopNotification,
+  resetValue
 }) => {
 
   const options = {
@@ -15,6 +17,7 @@ const DesktopNotification = ({
     dir: 'ltr',
   }
 
+
   const handleNotSupported = () => {
 
   }
@@ -24,7 +27,6 @@ const DesktopNotification = ({
   }
 
   const handleNotificationOnClose = () => {
-
   }
 
   const handleNotificationOnError = () => {
@@ -32,12 +34,14 @@ const DesktopNotification = ({
   }
 
   const handleOnShow = () => {
+    resetValue()
     const audio = new Audio(sound);
     audio.play();
   }
 
   return (
     <div>
+      {showDesktopNotification &&  
        <Notification
         askAgain = {true}
         notSupported={handleNotSupported}
@@ -45,10 +49,10 @@ const DesktopNotification = ({
         onClick={handleNotificationOnClick}
         onClose={handleNotificationOnClose}
         onError={handleNotificationOnError}
-        timeout={5000}
+        timeout={2000}
         title={title}
         options={options}
-       />
+       />}
     </div>
   )
 }

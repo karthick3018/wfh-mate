@@ -1,14 +1,16 @@
 import React,{useState,useEffect} from 'react';
 import {WATER_TONE} from '../../helpers/sounds';
 import Switch from '../../uiElements/switch';
+import DesktopNotification from '../../uiElements/desktopNotification';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
 
 const WaterBreakTimer = () => {
   const [waterBreakTime,setWaterBreakTime] = useState({
     seconds:0,
-    minutes:30
+    minutes:15
   });
+  const [showDesktopNotification,setDesktopNotification] = useState(false);
   const [{state:existingValue,setState:setValueInLocalStore}] = useLocalStorage('waterBreakTiming',waterBreakTime);
   const [{state:isWaterBreakStartClicked,setState:setWaterBreakStartClicked}] = useLocalStorage('isWaterBreakStartClicked',false);
   const [state,setState] = useReduceTimer(existingValue,isWaterBreakStartClicked)
@@ -22,32 +24,31 @@ const WaterBreakTimer = () => {
       setState(prevBreakTime => {
         return {...prevBreakTime, minutes: waterBreakTime?.minutes,seconds:0};
       });
-      playAudio()
-      alert('hey karthick water break')
+      setDesktopNotification(true)
    }
   }, [state, setState, waterBreakTime])
 
-  const playAudio = () => {
-    const audio = new Audio(WATER_TONE);
-    audio.play();
-  }
-
+   
   const handleIncrement = () => {
     if(waterBreakTime?.minutes<60)
     setWaterBreakTime(prevBreakTime => {
-      return {...prevBreakTime, minutes: prevBreakTime.minutes+30};
+      return {...prevBreakTime, minutes: prevBreakTime.minutes+15};
     });
   }
   const handleDecrement = () => {
-     if(waterBreakTime?.minutes>30)
+     if(waterBreakTime?.minutes>15)
      setWaterBreakTime(prevBreakTime => {
-      return {...prevBreakTime, minutes: prevBreakTime.minutes-30};
+      return {...prevBreakTime, minutes: prevBreakTime.minutes-15};
     });
   }
 
   const handleStart = () => {
     setWaterBreakStartClicked(true);
     setState(waterBreakTime)
+  }
+
+  const resetValue = () => {
+    setDesktopNotification(false)
   }
 
   return (
@@ -58,6 +59,13 @@ const WaterBreakTimer = () => {
        <p>mm:{state?.minutes}ss:{state?.seconds}</p>
        <Switch label={"Show desktop notification"}/>
        <Switch label={"Alert tone"}/>
+       <DesktopNotification
+        title="WFH mate"
+        body="hey karthick water break now"
+        sound={WATER_TONE}
+        showDesktopNotification = { showDesktopNotification }
+        resetValue = { resetValue }
+      />
     </div>
   )
 }
