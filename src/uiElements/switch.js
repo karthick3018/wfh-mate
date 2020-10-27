@@ -1,11 +1,18 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import { Switch } from 'antd';
 
-const Toggle = ({children}) => {
+const Toggle = ({children,handleSwitchChange,checked}) => {
   const [on,setOn] = useState(false);
 
+  useEffect(() => {
+     if(checked){
+      setOn(true);
+     }
+  }, [checked])
+
   const onChange = (value) => {
-    setOn(!on);
+    handleSwitchChange(value);
+    setOn(!on)
   }
 
   return React.Children.map(children, child => {
@@ -19,10 +26,10 @@ const Toggle = ({children}) => {
 const ToggleOn = ({on,children}) => (children)
 const ToggleButton = ({on,onChange}) => (<Switch checked={on} onChange={onChange}/>)
 
-const SwitchElement = ({label='Switch'}) => {
+const SwitchElement = ({label='Switch',handleSwitchChange,checked}) => {
   return (
     <div>
-      <Toggle>
+      <Toggle handleSwitchChange={handleSwitchChange} checked={checked}>
         <ToggleOn>{label}</ToggleOn>
         <ToggleButton/>
        </Toggle>

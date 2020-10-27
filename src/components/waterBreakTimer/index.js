@@ -13,6 +13,7 @@ const WaterBreakTimer = () => {
   const [showDesktopNotification,setDesktopNotification] = useState(false);
   const [{state:existingValue,setState:setValueInLocalStore}] = useLocalStorage('waterBreakTiming',waterBreakTime);
   const [{state:isWaterBreakStartClicked,setState:setWaterBreakStartClicked}] = useLocalStorage('isWaterBreakStartClicked',false);
+  const [{state:isEnableNotification,setState:setEnableNotification}] = useLocalStorage('isDesktopNotificationWater',true);
   const [state,setState] = useReduceTimer(existingValue,isWaterBreakStartClicked)
 
   window.onbeforeunload = ()=> {
@@ -51,19 +52,22 @@ const WaterBreakTimer = () => {
     setDesktopNotification(false)
   }
 
+  const handleSwitchChange = (value) => {
+    setEnableNotification(value)
+  }
+
   return (
     <div>
       <p>Have a glass of water </p>
        <span onClick={handleIncrement}>+++</span><p>{waterBreakTime?.minutes}  mins</p><span onClick={handleDecrement}>---</span>
        <button onClick={handleStart}>start</button>
        <p>mm:{state?.minutes}ss:{state?.seconds}</p>
-       <Switch label={"Show desktop notification"}/>
-       <Switch label={"Alert tone"}/>
+       <Switch label={"Show desktop notification"} handleSwitchChange={handleSwitchChange} checked={isEnableNotification}/>
        <DesktopNotification
         title="WFH mate"
         body="hey karthick water break now"
         sound={WATER_TONE}
-        showDesktopNotification = { showDesktopNotification }
+        showDesktopNotification = { isEnableNotification?showDesktopNotification:false }
         resetValue = { resetValue }
       />
     </div>

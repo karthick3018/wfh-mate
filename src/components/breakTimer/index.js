@@ -1,5 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Switch from '../../uiElements/switch';
+import {ALARM_TONE} from '../../helpers/sounds';
+import DesktopNotification from '../../uiElements/desktopNotification';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
 
@@ -10,11 +12,31 @@ const BreakTimer = () => {
   });
   const [{state:existingValue,setState:setValueInLocalStore}] = useLocalStorage('breakTiming',breakTime);
   const [{state:isBreakStartClicked,setState:setBreakStartClicked}] = useLocalStorage('isBreakStartClicked',false);
+  const [{state:isEnableNotification,setState:setEnableNotification}] = useLocalStorage('isDesktopNotificationBreak',true);
+  const [{state:isAlarmEnabled,setState:setAlarmEnabled}] = useLocalStorage('isAlarmEnabled',true);
   const [state,setState] = useReduceTimer(existingValue,isBreakStartClicked)
+  const [showDesktopNotification,setDesktopNotification] = useState(false);
 
   window.onbeforeunload = ()=> {
     setValueInLocalStore(state)
   };
+
+  useEffect(() => {
+    if(state?.seconds===0 && state?.minutes===0){
+       if(isEnableNotification){
+        setDesktopNotification(true)
+       }
+       if(isAlarmEnabled){
+         playAudio()
+       }
+   }
+  }, [state,isEnableNotification,isAlarmEnabled])
+
+  const playAudio = () => {
+    const audio = new Audio(ALARM_TONE);
+    audio.play();
+  }
+
 
   const handleIncrement = () => {
     if(breakTime?.minutes<45)
@@ -34,6 +56,18 @@ const BreakTimer = () => {
     setState(breakTime)
   }
 
+  const resetValue = () => {
+    setDesktopNotification(false)
+  }
+
+  const handleDesktopSwitchChange = (value) => {
+    setEnableNotification(value)
+  }
+
+  const handleAlertSwitchChange = (value) => {
+    setAlarmEnabled(value)
+  }
+
   return (
     <div>
       <p>Have a break</p>
@@ -42,8 +76,14 @@ const BreakTimer = () => {
        <button onClick={()=>setBreakStartClicked(false)}>pause</button>
        <button onClick={()=>setBreakStartClicked(false)}>end</button>
        <p>mm:{state?.minutes}ss:{state?.seconds}</p>
-       <Switch label={"Show desktop notification"}/>
-       <Switch label={"Alert tone"}/>
+       <Switch label={"Show desktop notification"} handleSwitchChange={handleDesktopSwitchChange} checked={isEnableNotification}/>
+       <Switch label={"Alert tone"} handleSwitchChange={handleAlertSwitchChange} checked={isAlarmEnabled}/>
+       <DesktopNotification
+        title="WFH mate"
+        body="hey karthick water break now"
+        showDesktopNotification = { isEnableNotification?showDesktopNotification:false }
+        resetValue = { resetValue }
+      />
     </div>
   )
 }

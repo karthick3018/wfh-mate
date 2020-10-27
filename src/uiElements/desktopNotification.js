@@ -49,7 +49,7 @@ const DesktopNotification = ({
         onClick={handleNotificationOnClick}
         onClose={handleNotificationOnClose}
         onError={handleNotificationOnError}
-        timeout={2000}
+        timeout={4000}
         title={title}
         options={options}
        />}
