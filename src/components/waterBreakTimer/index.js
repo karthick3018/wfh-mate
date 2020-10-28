@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import {WATER_TONE} from '../../helpers/sounds';
 import Switch from '../../uiElements/switch';
 import DesktopNotification from '../../uiElements/desktopNotification';
+import ProgressBar from '../../uiElements/progress';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
 
@@ -61,7 +62,7 @@ const WaterBreakTimer = () => {
       <p>Have a glass of water </p>
        <span onClick={handleIncrement}>+++</span><p>{waterBreakTime?.minutes}  mins</p><span onClick={handleDecrement}>---</span>
        <button onClick={handleStart}>start</button>
-       <p>mm:{state?.minutes}ss:{state?.seconds}</p>
+       <ProgressBar time={state} totalTime={waterBreakTime?.minutes}/>
        <Switch label={"Show desktop notification"} handleSwitchChange={handleSwitchChange} checked={isEnableNotification}/>
        <DesktopNotification
         title="WFH mate"
