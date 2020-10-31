@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import Switch from '../../uiElements/switch';
+import ProgressBar from '../../uiElements/progress';
 import {ALARM_TONE} from '../../helpers/sounds';
 import DesktopNotification from '../../uiElements/desktopNotification';
 import useLocalStorage  from '../../hooks/useLocalStorage';
@@ -75,7 +76,7 @@ const BreakTimer = () => {
        <button onClick={handleStart}>start</button>
        <button onClick={()=>setBreakStartClicked(false)}>pause</button>
        <button onClick={()=>setBreakStartClicked(false)}>end</button>
-       <p>mm:{state?.minutes}ss:{state?.seconds}</p>
+       <ProgressBar time={state} totalTime={state?.minutes}/>
        <Switch label={"Show desktop notification"} handleSwitchChange={handleDesktopSwitchChange} checked={isEnableNotification}/>
        <Switch label={"Alert tone"} handleSwitchChange={handleAlertSwitchChange} checked={isAlarmEnabled}/>
        <DesktopNotification
