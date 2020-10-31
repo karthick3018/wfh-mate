@@ -2,6 +2,7 @@ import React from 'react';
 import WorkTimer from './components/workTimer';
 import BreakTimer from './components/breakTimer';
 import WaterBreakTimer from './components/waterBreakTimer';
+import Note from './components/note';
 import './App.css';
 
 const App=()=> {
@@ -11,6 +12,7 @@ const App=()=> {
        <WorkTimer/>
        <BreakTimer/>
        <WaterBreakTimer/>
+       <Note/>
      </div>
   );
 }
