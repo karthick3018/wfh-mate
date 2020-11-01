@@ -18,10 +18,6 @@ const BreakTimer = () => {
   const [state,setState] = useReduceTimer(existingValue,isBreakStartClicked)
   const [showDesktopNotification,setDesktopNotification] = useState(false);
 
-  window.onbeforeunload = ()=> {
-    setValueInLocalStore(state)
-  };
-
   useEffect(() => {
     if(state?.seconds===0 && state?.minutes===0){
        if(isEnableNotification){
@@ -31,7 +27,8 @@ const BreakTimer = () => {
          playAudio()
        }
    }
-  }, [state,isEnableNotification,isAlarmEnabled])
+   setValueInLocalStore(state)
+  }, [state,isEnableNotification,isAlarmEnabled,setValueInLocalStore])
 
   const playAudio = () => {
     const audio = new Audio(ALARM_TONE);

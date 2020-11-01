@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import useTimer from '../../hooks/useTimer';
 import useLocalStorage from '../../hooks/useLocalStorage';
 
@@ -13,9 +13,9 @@ const WorkTimer=()=> {
   const [{state:isStartClicked,setState:setStartClicked}] = useLocalStorage('isStartClicked',false);
   const [state] = useTimer(existingValue,isStartClicked);
 
-  window.onbeforeunload = ()=> {
+  useEffect(() => {
     setState(state)
-  }; 
+  }, [state,setState])
 
   const handleEndClick = () => {
     setStartClicked(false);

@@ -17,10 +17,6 @@ const WaterBreakTimer = () => {
   const [{state:isEnableNotification,setState:setEnableNotification}] = useLocalStorage('isDesktopNotificationWater',true);
   const [state,setState] = useReduceTimer(existingValue,isWaterBreakStartClicked)
 
-  window.onbeforeunload = ()=> {
-    setValueInLocalStore(state)
-  };
-
   useEffect(() => {
     if(state?.seconds===0 && state?.minutes===0){
       setState(prevBreakTime => {
@@ -28,7 +24,8 @@ const WaterBreakTimer = () => {
       });
       setDesktopNotification(true)
    }
-  }, [state, setState, waterBreakTime])
+   setValueInLocalStore(state)
+  }, [state, setState, waterBreakTime,setValueInLocalStore])
 
    
   const handleIncrement = () => {
