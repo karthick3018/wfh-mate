@@ -1,5 +1,6 @@
 import React from 'react';
 import TextArea from '../../uiElements/textArea';
+import TodoElement from '../../uiElements/todo';
 
 const Note = () => {
   return (
@@ -7,6 +8,7 @@ const Note = () => {
       <TextArea 
        
       />
+      <TodoElement/>
     </div>
   )
 }
