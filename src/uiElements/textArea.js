@@ -1,16 +1,18 @@
-import React,{useState} from 'react';
+import React from 'react';
+import useLocalStorage  from '../hooks/useLocalStorage';
 
 const TextArea = () => {
-  const [textArea,setTextArea] = useState('');
+  const [{state,setState}] = useLocalStorage('textAreaContent','');
+
   const handleTextAreaChange = (e) => {
-    setTextArea(e.target.value)
+    setState(e.target.value)
   }
 
   return (
     <div>
       <textarea 
        onChange={handleTextAreaChange}
-       value={textArea}
+       value={state}
       />
     </div>
   )

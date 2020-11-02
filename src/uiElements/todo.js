@@ -1,10 +1,12 @@
-import React,{useState} from 'react';
+import React from 'react';
+import useLocalStorage  from '../hooks/useLocalStorage';
 import { Checkbox } from 'antd';
+
 
 const initialData = [{id:0,completed:false,todoText:''}];
 
 const TodoElement = () => {
-  const [todoValues,setTodoValues] = useState(()=>initialData);
+  const [{state:todoValues,setState:setTodoValues}] = useLocalStorage('todoList',initialData);
 
   const handleKeyPress = (e) => {
     if(e.key==='Enter'){
@@ -22,6 +24,11 @@ const TodoElement = () => {
     todoValues[index].completed = !todoValues[index].completed
     setTodoValues(updatedValue);
   }
+  const handleTextChange = (e,index) => {
+    let updatedValue = [...todoValues];
+    todoValues[index].todoText = e.target.value
+    setTodoValues(updatedValue);
+  }
 
   return (
     <div>
@@ -29,7 +36,7 @@ const TodoElement = () => {
         return(
          <div key={eachTodoItems?.id}>
           <Checkbox onChange={()=>handleCheckBoxChange(i)} checked={eachTodoItems?.completed} />
-          <div contentEditable="true" onKeyPress={handleKeyPress}/>
+          <input onKeyPress={handleKeyPress} onChange={(e)=>handleTextChange(e,i)} value={eachTodoItems?.todoText}/>
          </div>
         )
       })}
