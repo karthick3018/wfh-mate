@@ -9,8 +9,8 @@ const App=()=> {
   return (
      <div>
        Here's wfh mate that can help you
-       {/* <WorkTimer/>
-       <BreakTimer/> */}
+       <WorkTimer/>
+       <BreakTimer/>
        <WaterBreakTimer/>
        <Note/>
      </div>
