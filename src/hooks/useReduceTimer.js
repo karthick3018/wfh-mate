@@ -5,13 +5,13 @@ const initialState = {
   minutes:0,
 }
 
-const useReduceTimer = (existingState=initialState,isStart=true) => {
+const useReduceTimer = (existingState=initialState,isStart=true,isPause=true) => {
 
   const [state, setState] = useState(()=>existingState);
 
   useEffect(() => {
     let timer;
-    if(isStart){
+    if(isStart && isPause){
       timer = setTimeout(()=>{
         if(state?.seconds<=59 && state?.seconds>0){
           setState(prevState => {
@@ -28,7 +28,7 @@ const useReduceTimer = (existingState=initialState,isStart=true) => {
 
     return () => clearTimeout(timer);
     
- },[state,isStart])
+ },[state,isStart,isPause])
 
  return [state,setState]
 

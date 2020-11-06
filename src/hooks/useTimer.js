@@ -6,13 +6,12 @@ const initialState = {
   hours:0
 }
 
-const useTimer = (existingState=initialState,isStart=true) => {
-
+const useTimer = (existingState=initialState,isStart=true,isPause=true) => {
   const [state, setState] = useState(()=>existingState);
 
   useEffect(() => {
     let timer;
-    if(isStart){
+    if(isStart && isPause){
       timer = setTimeout(()=>{
         if(state?.seconds<59){
           setState(prevState => {
@@ -34,7 +33,7 @@ const useTimer = (existingState=initialState,isStart=true) => {
 
     return () => clearTimeout(timer);
     
- },[state,isStart])
+ },[state,isStart,isPause])
 
  return [state]
 

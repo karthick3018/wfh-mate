@@ -7,12 +7,16 @@ import './App.css';
 
 const App=()=> {
   return (
-     <div>
+     <div className="main-wrapper">
        Here's wfh mate that can help you
-       <WorkTimer/>
-       <BreakTimer/>
-       <WaterBreakTimer/>
-       <Note/>
+       <div className="components-wrapper">
+        <WorkTimer/>
+        <Note/>
+        <div className="break-wrap">
+          <BreakTimer/>
+          <WaterBreakTimer/>
+        </div>
+       </div>
      </div>
   );
 }
