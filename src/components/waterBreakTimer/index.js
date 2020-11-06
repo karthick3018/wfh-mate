@@ -5,6 +5,7 @@ import DesktopNotification from '../../uiElements/desktopNotification';
 import ProgressBar from '../../uiElements/progress';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
+import './waterBreak.css'
 
 const WaterBreakTimer = () => {
   const [waterBreakTime,setWaterBreakTime] = useState({
@@ -55,12 +56,23 @@ const WaterBreakTimer = () => {
   }
 
   return (
-    <div>
-      <p>Have a glass of water </p>
-       <span onClick={handleIncrement}>+++</span><p>{waterBreakTime?.minutes}  mins</p><span onClick={handleDecrement}>---</span>
-       <button onClick={handleStart}>start</button>
+    <div className="water-break-wrapper">
+
+       <div className="set-water-break">
+        <p>Remain me for every </p>
+        <div className="water-break-timer">
+          <span onClick={handleIncrement}>+++</span><p>{waterBreakTime?.minutes}  mins</p><span onClick={handleDecrement}>---</span>
+        </div>
+       </div>
+       
+       <div className="water-break-control">
+        <button onClick={handleStart}>start</button>
+       </div>
+
        <ProgressBar time={state} totalTime={waterBreakTime?.minutes}/>
-       <Switch label={"Show desktop notification"} handleSwitchChange={handleSwitchChange} checked={isEnableNotification}/>
+
+       <Switch label={"Desktop notification"} handleSwitchChange={handleSwitchChange} checked={isEnableNotification}/>
+
        <DesktopNotification
         title="WFH mate"
         body="hey karthick water break now"

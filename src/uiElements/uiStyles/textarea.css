@@ -1,0 +1,9 @@
+textarea {
+  max-height: 300px;
+  height: 200px;
+  width: 500px;
+  border-radius: 10px;
+  overflow: scroll;
+  outline: none;
+  padding: 10px;
+}

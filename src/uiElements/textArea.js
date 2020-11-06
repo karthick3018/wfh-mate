@@ -1,5 +1,6 @@
 import React from 'react';
 import useLocalStorage  from '../hooks/useLocalStorage';
+import './uiStyles/textarea.css';
 
 const TextArea = () => {
   const [{state,setState}] = useLocalStorage('textAreaContent','');

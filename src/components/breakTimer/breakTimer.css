@@ -1,0 +1,30 @@
+.break-wrapper{
+  max-width: 40%;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid yellow;
+  align-items: center;
+}
+
+.set-break-wrapper{
+  display: flex;
+  align-content: center; 
+}
+
+.set-break-time{
+  display: flex;
+  padding-left: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timer-control-wrapper{
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.switch-wrapper{
+  display: flex;
+  align-items: center;
+}

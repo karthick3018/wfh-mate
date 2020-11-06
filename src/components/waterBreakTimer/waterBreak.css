@@ -1,0 +1,23 @@
+.water-break-wrapper{
+  max-width: 40%;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid blue;
+  align-items: center;
+}
+
+.set-water-break{
+  display: flex;
+  align-content: center;
+}
+
+.water-break-timer{
+  display: flex;
+  padding-left: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.water-break-control{
+  padding: 10px 0;
+}

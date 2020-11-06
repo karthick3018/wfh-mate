@@ -5,6 +5,7 @@ import {ALARM_TONE} from '../../helpers/sounds';
 import DesktopNotification from '../../uiElements/desktopNotification';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
+import './breakTimer.css';
 
 const BreakTimer = () => {
   const [breakTime,setBreakTime] = useState({
@@ -67,15 +68,27 @@ const BreakTimer = () => {
   }
 
   return (
-    <div>
-      <p>Have a break</p>
-       <span onClick={handleIncrement}>+++</span><p>{breakTime?.minutes}  mins</p><span onClick={handleDecrement}>---</span>
-       <button onClick={handleStart}>start</button>
-       <button onClick={()=>setBreakStartClicked(false)}>pause</button>
-       <button onClick={()=>setBreakStartClicked(false)}>end</button>
+    <div className="break-wrapper">
+      <div className="set-break-wrapper">
+        <p>Set break for</p>
+        <div className="set-break-time">
+         <span span onClick={handleIncrement}>+++</span><p>{breakTime?.minutes}  mins</p><span onClick={handleDecrement}>---</span>
+        </div>
+       </div>
+       
+       <div className="timer-control-wrapper">
+        <button onClick={handleStart}>start</button>
+        <button onClick={()=>setBreakStartClicked(false)}>pause</button>
+        <button onClick={()=>setBreakStartClicked(false)}>end</button>
+       </div>
+
        <ProgressBar time={state} totalTime={state?.minutes}/>
-       <Switch label={"Show desktop notification"} handleSwitchChange={handleDesktopSwitchChange} checked={isEnableNotification}/>
+
+      <div className="switch-wrapper">
+       <Switch label={"Desktop notification"} handleSwitchChange={handleDesktopSwitchChange} checked={isEnableNotification}/>
        <Switch label={"Alert tone"} handleSwitchChange={handleAlertSwitchChange} checked={isAlarmEnabled}/>
+      </div>
+
        <DesktopNotification
         title="WFH mate"
         body="hey karthick water break now"

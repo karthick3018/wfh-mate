@@ -1,10 +1,11 @@
 import React from 'react';
 import TextArea from '../../uiElements/textArea';
 import TodoElement from '../../uiElements/todo';
+import './notes.css';
 
 const Note = () => {
   return (
-    <div>
+    <div className="notes-wrapper">
       <TextArea 
        
       />

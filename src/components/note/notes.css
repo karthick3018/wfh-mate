@@ -1,0 +1,8 @@
+.notes-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid springgreen;
+  margin:20px 0;
+  padding: 10px;
+}
