@@ -7,7 +7,7 @@ import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
 import './breakTimer.css';
 
-const BreakTimer = () => {
+const BreakTimer = ({onBreakChange}) => {
   const [breakTime,setBreakTime] = useState({
     seconds:0,
     minutes:5
@@ -53,6 +53,12 @@ const BreakTimer = () => {
   const handleStart = () => {
     setBreakStartClicked(true);
     setState(breakTime)
+    onBreakChange(true);
+  }
+
+  const handlePause = () => {
+    setBreakStartClicked(false);
+    onBreakChange(false);
   }
 
   const resetValue = () => {
@@ -78,8 +84,8 @@ const BreakTimer = () => {
        
        <div className="timer-control-wrapper">
         <button onClick={handleStart}>start</button>
-        <button onClick={()=>setBreakStartClicked(false)}>pause</button>
-        <button onClick={()=>setBreakStartClicked(false)}>end</button>
+        <button onClick={handlePause}>pause</button>
+        <button onClick={handlePause}>end</button>
        </div>
 
        <ProgressBar time={state} totalTime={state?.minutes}/>

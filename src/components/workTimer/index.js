@@ -9,7 +9,7 @@ const initialState = {
   hours:0
 }
 
-const WorkTimer=()=> {
+const WorkTimer=({isNeedToPause})=> {
   const [{state:existingValue,setState}] = useLocalStorage('timing',initialState);
   const [{state:isStartClicked,setState:setStartClicked}] = useLocalStorage('isStartClicked',false);
   const [state] = useTimer(existingValue,isStartClicked);
@@ -18,8 +18,18 @@ const WorkTimer=()=> {
     setState(state)
   }, [state,setState])
 
+
+ /**
+ * @state  isNeedToPause -> it's opposite value is used since if break is true work should pause
+  **/
+
+  useEffect(() => {
+     if(isNeedToPause!==null) 
+     setStartClicked(!isNeedToPause) 
+  }, [isNeedToPause,setStartClicked])
+
   const handleEndClick = () => {
-    setStartClicked(false);
+     setStartClicked(false);
     alert('yahoo! great work for the day')
   }
 
