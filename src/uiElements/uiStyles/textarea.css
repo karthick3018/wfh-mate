@@ -1,9 +1,13 @@
 textarea {
-  max-height: 300px;
+  max-height: 280px;
   height: 200px;
   width: 500px;
   border-radius: 10px;
   overflow: scroll;
   outline: none;
   padding: 10px;
+}
+
+.textBox-wrapper{
+  width: 55%;
 }

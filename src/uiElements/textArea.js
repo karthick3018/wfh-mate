@@ -10,7 +10,7 @@ const TextArea = () => {
   }
 
   return (
-    <div>
+    <div className="textBox-wrapper">
       <textarea 
        onChange={handleTextAreaChange}
        value={state}

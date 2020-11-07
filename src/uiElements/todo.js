@@ -1,6 +1,7 @@
 import React from 'react';
 import useLocalStorage  from '../hooks/useLocalStorage';
 import { Checkbox } from 'antd';
+import '../uiElements/uiStyles/todo.css';
 
 
 const initialData = [{id:0,completed:false,todoText:''}];
@@ -40,12 +41,12 @@ const TodoElement = () => {
   }
 
   return (
-    <div>
+    <div className="todo-wrapper">
       {todoValues?.map((eachTodoItems,i)=>{
         return(
-         <div key={eachTodoItems?.id}>
-          <Checkbox onChange={()=>handleCheckBoxChange(i)} checked={eachTodoItems?.completed} />
-          <input onKeyDown={(e)=>handleKeyPress(e,i)} onChange={(e)=>handleTextChange(e,i)} value={eachTodoItems?.todoText}/>
+         <div className="todo-elements" key={eachTodoItems?.id}>
+          <Checkbox className="todo-checkbox" onChange={()=>handleCheckBoxChange(i)} checked={eachTodoItems?.completed} />
+          <input className="todo-input" onKeyDown={(e)=>handleKeyPress(e,i)} onChange={(e)=>handleTextChange(e,i)} value={eachTodoItems?.todoText}/>
          </div>
         )
       })}

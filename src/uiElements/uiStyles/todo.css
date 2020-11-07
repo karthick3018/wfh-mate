@@ -1,0 +1,25 @@
+.todo-wrapper {
+  width: 40%;
+  height: 200px;
+  overflow: scroll;
+}
+
+.todo-elements {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.todo-input {
+  width: 100%;
+  border-bottom: 1px solid gainsboro;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+.todo-checkbox {
+  padding-right: 10px;
+}
