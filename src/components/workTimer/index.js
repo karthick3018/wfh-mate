@@ -13,11 +13,20 @@ const initialState = {
 const WorkTimer=({isNeedToPause})=> {
   const [{state:existingValue,setState}] = useLocalStorage('timing',initialState);
   const [{state:isStartClicked,setState:setStartClicked}] = useLocalStorage('isStartClicked',false);
+  const [{state:clearDate,setState:setClearTime}] = useLocalStorage('clearDate',null);
   const [state] = useTimer(existingValue,isStartClicked);
 
   useEffect(() => {
     setState(state)
   }, [state,setState])
+
+  useEffect(() => {
+     if(clearDate < new Date()){
+      setState(initialState)
+      setStartClicked(false)
+    }
+      
+  }, [clearDate])
 
 
  /**
@@ -29,6 +38,13 @@ const WorkTimer=({isNeedToPause})=> {
      setStartClicked(!isNeedToPause) 
   }, [isNeedToPause,setStartClicked])
 
+  const handleStartClick = () => {
+    setStartClicked(true);
+    var nextDay = new Date();
+    nextDay.setHours(nextDay.getHours() + 1)
+    setClearTime(nextDay)
+  }
+
   const handleEndClick = () => {
      setStartClicked(false);
     alert('yahoo! great work for the day')
@@ -36,7 +52,7 @@ const WorkTimer=({isNeedToPause})=> {
 
   return (
       <div className="work-timer-wrap">
-       <button onClick={()=>setStartClicked(true)}>Start</button>
+       <button onClick={handleStartClick}>Start</button>
        <p className="timer">hh:{state?.hours}mm:{state?.minutes}ss:{state?.seconds}</p>
        <button onClick={handleEndClick}>End</button>
        <Calender/>

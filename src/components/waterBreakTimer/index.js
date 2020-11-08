@@ -34,12 +34,18 @@ const WaterBreakTimer = () => {
     setWaterBreakTime(prevBreakTime => {
       return {...prevBreakTime, minutes: prevBreakTime.minutes+15};
     });
+    setState(prevState=>{
+      return {...prevState, minutes: prevState.minutes+15};
+    })
   }
   const handleDecrement = () => {
      if(waterBreakTime?.minutes>15)
      setWaterBreakTime(prevBreakTime => {
       return {...prevBreakTime, minutes: prevBreakTime.minutes-15};
     });
+    setState(prevState=>{
+      return {...prevState, minutes: prevState.minutes-15};
+    })
   }
 
   const handleStart = () => {

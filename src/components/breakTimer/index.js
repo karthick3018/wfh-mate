@@ -40,15 +40,27 @@ const BreakTimer = ({onBreakChange}) => {
 
   const handleIncrement = () => {
     if(breakTime?.minutes<45)
-    setBreakTime(prevBreakTime => {
-      return {...prevBreakTime, minutes: prevBreakTime.minutes+5};
-    });
+    {
+      setBreakTime(prevBreakTime => {
+        return {...prevBreakTime, minutes: prevBreakTime.minutes+5};
+      });
+      setState(prevState => {
+          return {...prevState, minutes: prevState.minutes+5};
+      })
+    }
+    
   }
   const handleDecrement = () => {
      if(breakTime?.minutes>5)
-     setBreakTime(prevBreakTime => {
-      return {...prevBreakTime, minutes: prevBreakTime.minutes-5};
-    });
+     {
+      setBreakTime(prevBreakTime => {
+        return {...prevBreakTime, minutes: prevBreakTime.minutes-5};
+      });
+      setState(prevState => {
+        return {...prevState, minutes: prevState.minutes-5};
+    })
+     }
+   
   }
 
   const handleStart = () => {
