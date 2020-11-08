@@ -1,8 +1,11 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  box-sizing: border-box;
+  background-image: url("https://res.cloudinary.com/karthick30/image/upload/v1593439273/yxvelcaftjygrwmxqulb.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  color: rgb(255,255,255);
+  font-family: 'Noto Sans SC', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

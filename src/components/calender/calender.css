@@ -1,0 +1,24 @@
+.calender-wrapper {
+  width: 120px;
+  border-radius: 35px;
+  border: 1px solid;
+  text-align: center;
+}
+
+.month {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ee5222;
+  font-weight: bold;
+  margin: 0;
+}
+
+.date {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.formatted-date{
+  margin:0
+}

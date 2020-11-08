@@ -1,4 +1,5 @@
 import React,{useEffect} from 'react';
+import Calender from '../../components/calender'
 import useTimer from '../../hooks/useTimer';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import './workTimer.css';
@@ -36,8 +37,9 @@ const WorkTimer=({isNeedToPause})=> {
   return (
       <div className="work-timer-wrap">
        <button onClick={()=>setStartClicked(true)}>Start</button>
-       <p>hh:{state?.hours}mm:{state?.minutes}ss:{state?.seconds}</p>
+       <p className="timer">hh:{state?.hours}mm:{state?.minutes}ss:{state?.seconds}</p>
        <button onClick={handleEndClick}>End</button>
+       <Calender/>
        </div> 
   );
 }

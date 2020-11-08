@@ -27,6 +27,7 @@ const BreakTimer = ({onBreakChange}) => {
        if(isAlarmEnabled){
          playAudio()
        }
+       handleEnd()
    }
    setValueInLocalStore(state)
   }, [state,isEnableNotification,isAlarmEnabled,setValueInLocalStore])
@@ -61,6 +62,19 @@ const BreakTimer = ({onBreakChange}) => {
     onBreakChange(false);
   }
 
+  const handleEnd = () => {
+    setBreakStartClicked(false);
+    setValueInLocalStore({
+      seconds:0,
+      minutes:5
+    })
+    setState({
+      seconds:0,
+      minutes:5
+    })
+    onBreakChange(false);
+  }
+
   const resetValue = () => {
     setDesktopNotification(false)
   }
@@ -85,7 +99,7 @@ const BreakTimer = ({onBreakChange}) => {
        <div className="timer-control-wrapper">
         <button onClick={handleStart}>start</button>
         <button onClick={handlePause}>pause</button>
-        <button onClick={handlePause}>end</button>
+        <button onClick={handleEnd}>end</button>
        </div>
 
        <ProgressBar time={state} totalTime={state?.minutes}/>
