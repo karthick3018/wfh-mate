@@ -6,6 +6,9 @@ import './notes.css';
 const Note = () => {
   return (
     <div className="notes-wrapper">
+      <div className="notify-text">
+        <p>Don't test your memory skills in the list of work to do!! Make a note</p>
+      </div>
       <TextArea 
        
       />

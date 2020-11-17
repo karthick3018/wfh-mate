@@ -6,4 +6,13 @@
   margin:20px 0;
   padding: 10px;
   max-height: 300px;
+  position: relative;
+}
+
+.notify-text{
+  position: absolute;
+  width: 200px;
+  left: -210px;
+  bottom: 0;
+  border: 1px solid;
 }
