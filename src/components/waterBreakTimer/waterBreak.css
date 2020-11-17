@@ -4,6 +4,7 @@
   padding: 10px;
   border: 1px solid blue;
   align-items: center;
+  position: relative;
 }
 
 .set-water-break{
@@ -20,4 +21,12 @@
 
 .water-break-control{
   padding: 10px 0;
+}
+
+.notify-text-water{
+    position: absolute;
+    width: 200px;
+    right: -225px;
+    top: -16px;
+    border: 1px solid;
 }

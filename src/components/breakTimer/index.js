@@ -5,6 +5,11 @@ import {ALARM_TONE} from '../../helpers/sounds';
 import DesktopNotification from '../../uiElements/desktopNotification';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
+import PlayButton from '../icons/play.svg';
+import PauseButton from '../icons/video-pause-button.svg';
+import StopButton from '../icons/stop.svg';
+import PlusIcon from '../icons/plus.svg';
+import MinusIcon from '../icons/minus.svg';
 import './breakTimer.css';
 
 const BreakTimer = ({onBreakChange}) => {
@@ -64,8 +69,8 @@ const BreakTimer = ({onBreakChange}) => {
   }
 
   const handleStart = () => {
-    setBreakStartClicked(true);
-    setState(breakTime)
+    setBreakStartClicked(!isBreakStartClicked);
+   // setState(breakTime)
     onBreakChange(true);
   }
 
@@ -104,14 +109,16 @@ const BreakTimer = ({onBreakChange}) => {
       <div className="set-break-wrapper">
         <p>Set break for</p>
         <div className="set-break-time">
-         <span span onClick={handleIncrement}>+++</span><p>{breakTime?.minutes}  mins</p><span onClick={handleDecrement}>---</span>
+         <figure className="set-break-icon" onClick={handleIncrement}><img src={PlusIcon} alt="plus"/> </figure>
+           <p>{breakTime?.minutes}  mins</p>
+           <figure className="set-break-icon" onClick={handleDecrement}><img src={MinusIcon} alt="minus"/> </figure>
         </div>
        </div>
        
        <div className="timer-control-wrapper">
-        <button onClick={handleStart}>start</button>
-        <button onClick={handlePause}>pause</button>
-        <button onClick={handleEnd}>end</button>
+        <figure className="timer-icons" onClick={handleStart}><img src={PlayButton} alt="play/pause"/></figure>
+        {/* <figure className="timer-icons" onClick={handlePause}><img src={PauseButton} alt="pause"/></figure> */}
+        <figure className="timer-icons" onClick={handleEnd}><img src={StopButton} alt="stop"/></figure>
        </div>
 
        <ProgressBar time={state} totalTime={state?.minutes}/>

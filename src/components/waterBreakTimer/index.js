@@ -5,6 +5,8 @@ import DesktopNotification from '../../uiElements/desktopNotification';
 import ProgressBar from '../../uiElements/progress';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
+import PlusIcon from '../icons/plus.svg';
+import MinusIcon from '../icons/minus.svg';
 import './waterBreak.css'
 
 const WaterBreakTimer = () => {
@@ -63,11 +65,19 @@ const WaterBreakTimer = () => {
 
   return (
     <div className="water-break-wrapper">
-
+        <div className="notify-text-water">
+          <p>Staying hydrated is a important one . Make sure you're drinking sufficient water with the help of this remainder</p>
+        </div>
        <div className="set-water-break">
         <p>Remain me for every </p>
         <div className="water-break-timer">
-          <span onClick={handleIncrement}>+++</span><p>{waterBreakTime?.minutes}  mins</p><span onClick={handleDecrement}>---</span>
+          <figure className="set-break-icon" onClick={handleIncrement}>
+            <img src={PlusIcon} alt="play"/>
+          </figure>
+          <p>{waterBreakTime?.minutes}  mins</p>
+          <figure className="set-break-icon" onClick={handleDecrement}>
+            <img src={MinusIcon} alt="minus"/>
+          </figure>
         </div>
        </div>
        
