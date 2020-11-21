@@ -1,5 +1,6 @@
 import React from 'react';
 import Notification from 'react-web-notification';
+import mate from '../components/icons/mate.png';
 
 const DesktopNotification = ({
   title='WFH mate',
@@ -12,7 +13,7 @@ const DesktopNotification = ({
   const options = {
     tag: 'now',
     body,
-    // icon: icon,
+    icon: mate,
     lang: 'en',
     dir: 'ltr',
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import TextArea from '../../uiElements/textArea';
 import TodoElement from '../../uiElements/todo';
+import mate from '../icons/mate.png';
 import './notes.css';
 
 const Note = () => {
@@ -13,6 +14,11 @@ const Note = () => {
        
       />
       <TodoElement/>
+      <div className="mate-image-wrapper">
+        <figure className="mate-figure">
+          <img className="mate-img" src={mate} alt="mate" />
+        </figure>
+      </div>
     </div>
   )
 }
