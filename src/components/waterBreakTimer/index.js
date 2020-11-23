@@ -66,10 +66,10 @@ const WaterBreakTimer = () => {
   return (
     <div className="water-break-wrapper">
         <div className="notify-text-water">
-          <p>Staying hydrated is a important one . Make sure you're drinking sufficient water with the help of this remainder</p>
+          <p className="notify-water-text">Staying hydrated is a important one . Make sure you're drinking sufficient water.</p>
         </div>
        <div className="set-water-break">
-        <p>Remain me for every </p>
+        <p>Water break on every </p>
         <div className="water-break-timer">
           <figure className="set-break-icon" onClick={handleIncrement}>
             <img src={PlusIcon} alt="play"/>

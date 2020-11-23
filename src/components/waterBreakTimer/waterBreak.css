@@ -29,4 +29,13 @@
     right: -225px;
     top: -16px;
     border: 1px solid;
+    border-radius: 100px/60px;
+    background: antiquewhite;
+}
+
+.notify-water-text{
+   width: 130px;
+   position: relative;
+   left: 40px;
+   top: 7px;
 }
