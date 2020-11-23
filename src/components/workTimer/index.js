@@ -52,13 +52,17 @@ const WorkTimer=({isNeedToPause})=> {
 
   return (
       <div className="work-timer-wrap">
-       <button onClick={handleStartClick}>Start Work</button>
+       <div className="control-button" onClick={handleStartClick}>
+         <div className="control-button-inner">Start Work</div>
+       </div>
        <p className="timer">
          <span className="timer-element">{state?.hours< 10 ? `${0}${state?.hours}`: state?.hours}</span>
          <span className="timer-element">{state?.minutes< 10 ? `${0}${state?.minutes}`: state?.minutes}</span>
          <span className="timer-element">{state?.seconds< 10 ? `${0}${state?.seconds}`: state?.seconds}</span>
        </p>
-       <button onClick={handleEndClick}>End Work</button>
+       <div className="control-button" onClick={handleEndClick}>
+         <div className="control-button-inner">End Work</div>
+       </div>
        <Calender/>
        </div> 
   );

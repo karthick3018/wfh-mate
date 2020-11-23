@@ -1,8 +1,15 @@
 .calender-wrapper {
   width: 120px;
   border-radius: 35px;
-  border: 1px solid;
   text-align: center;
+  background: #eef0f4;
+  box-shadow: 10px 10px 15px #43144c, -10px -10px 15px #ffffff;
+}
+
+.calender-inner-wrapper{
+  border-radius: 35px;
+  background: #eef0f4;
+  box-shadow: inset 10px 10px 15px #f1f6ff, inset -10px -10px 15px #ffffff;
 }
 
 .month {

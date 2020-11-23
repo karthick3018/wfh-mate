@@ -4,6 +4,7 @@
   padding: 10px;
   border: 1px solid yellow;
   align-items: center;
+  position: relative;
 }
 
 .set-break-wrapper{
@@ -37,4 +38,18 @@
 
 .set-break-icon{
   width: 30px;
+}
+
+.tired-img-wrapper{
+  position: absolute;
+  left: -230px;
+  bottom: -20px;
+}
+
+.tired-img-figure{
+  width: 200px;
+}
+
+.tired-img{
+  width: 100%;
 }

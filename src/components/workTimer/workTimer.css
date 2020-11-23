@@ -2,12 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid rebeccapurple;
+  border: 1px solid #f5e6f5;
   padding: 10px;
 }
 
 .timer{
   /* color: white; */
+  font-weight: bold;
+  font-family: monospace;
   font-size: 40px;
   margin: 0;
 }
@@ -15,4 +17,22 @@
    border: 1px solid;
    padding: 5px;
    margin-right: 5px;
+   background: aliceblue;
+}
+
+.control-button{
+  border: 5px solid;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+.control-button-inner{
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  background: blanchedalmond;;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

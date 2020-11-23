@@ -3,7 +3,6 @@
   width: 100%;
   margin: 0 auto;
   padding: 10px;
-  /* background-color: rgba(0,0,0, 0.3); */
   height: 100v
 }
 
@@ -19,5 +18,5 @@
   justify-content: space-between;
   margin-top: 20px;
   padding: 10px;
-  border: 1px solid;
+  border: 1px solid #f5e6f5;
 }

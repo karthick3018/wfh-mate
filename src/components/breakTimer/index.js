@@ -10,6 +10,7 @@ import PauseButton from '../icons/video-pause-button.svg';
 import StopButton from '../icons/stop.svg';
 import PlusIcon from '../icons/plus.svg';
 import MinusIcon from '../icons/minus.svg';
+import TiredIllustration from '../illustrations/tired.png';
 import './breakTimer.css';
 
 const BreakTimer = ({onBreakChange}) => {
@@ -106,6 +107,11 @@ const BreakTimer = ({onBreakChange}) => {
 
   return (
     <div className="break-wrapper">
+      <div className="tired-img-wrapper">
+        <figure className="tired-img-figure">
+          <img className="tired-img" src ={TiredIllustration} alt="tired" />
+        </figure>
+      </div>
       <div className="set-break-wrapper">
         <p>Set break for</p>
         <div className="set-break-time">

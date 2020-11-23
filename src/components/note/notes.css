@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid springgreen;
+  border: 1px solid #f5e6f5;
   margin:20px 0;
   padding: 10px;
   max-height: 300px;
@@ -11,10 +11,21 @@
 
 .notify-text{
   position: absolute;
-  width: 200px;
-  left: -210px;
+  width: 190px;
+  left: -224px;
   bottom: 0;
   border: 1px solid;
+  border-radius: 100px/60px;
+  overflow: visible;
+  word-break: break-word;
+  background: antiquewhite;
+}
+
+.notify-text-element{
+  position: relative;
+  width: 130px;
+  left: 40px;
+  top: 5px;
 }
 
 .mate-image-wrapper{

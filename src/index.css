@@ -3,10 +3,11 @@ body {
   box-sizing: border-box;
   /* background-image: url("https://res.cloudinary.com/karthick30/image/upload/v1593430194/xf8xle2qdx8ganfjtz5h.jpg"); */
   /* background-image: url("https://res.cloudinary.com/karthick30/image/upload/v1593439273/yxvelcaftjygrwmxqulb.jpg"); */
-  background-repeat:no-repeat;
-  background-size:cover;
-  color:rgb(255,255,255);
+  /* background-repeat:no-repeat;
+  background-size:cover; */
   font-family: "Alegreya", "serif";
+  background:#E4AFC1 !important;
+
 }
 
 *{
