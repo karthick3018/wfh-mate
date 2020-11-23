@@ -66,7 +66,7 @@ const WaterBreakTimer = () => {
   return (
     <div className="water-break-wrapper">
         <div className="notify-text-water">
-          <p className="notify-water-text">Staying hydrated is a important one . Make sure you're drinking sufficient water.</p>
+          <p className="sticky-note-wrap sticky-note-orange sticky-note-wrap-text">Staying hydrated is an important one . Make sure you're drinking sufficient water...</p>
         </div>
        <div className="set-water-break">
         <p>Water break on every </p>

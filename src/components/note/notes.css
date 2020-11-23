@@ -12,20 +12,8 @@
 .notify-text{
   position: absolute;
   width: 190px;
-  left: -224px;
-  bottom: 0;
-  border: 1px solid;
-  border-radius: 100px/60px;
-  overflow: visible;
-  word-break: break-word;
-  background: antiquewhite;
-}
-
-.notify-text-element{
-  position: relative;
-  width: 130px;
-  left: 40px;
-  top: 5px;
+  left: -245px;
+  bottom: 0px;
 }
 
 .mate-image-wrapper{
@@ -40,4 +28,13 @@
 
 .mate-img{
   width: 100%;
+}
+
+.sticky-note-blue {
+	background: #b9dcf4;
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
+	transform: rotate(-2deg);
 }

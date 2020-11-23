@@ -13,3 +13,49 @@ body {
 *{
   box-sizing: border-box;
 }
+
+.sticky-note-wrap {
+  width: 200px;
+  min-height: auto;
+  padding: 20px;
+	margin: 0 22px 44px 22px;
+	position: relative;
+	font-size: 24px;
+	vertical-align: top;
+  display: inline-block;
+	font-family: Englebert, Arial;
+	color:#4b453c;
+	background: #F7E999;
+	line-height: 34px; 
+	text-align: center;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-note-wrap::before{
+  display: block;
+  content: ""; 
+  background: rgba(227, 200, 114, 0.40);
+  width: 130px;
+  height: 28px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 6px/18px 0;
+  position: absolute;
+  top: -13px;
+  left: 50px;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+.sticky-note-wrap-text{
+  color:#6b824f;
+  text-decoration: none;
+  font-size: 18px; 
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}

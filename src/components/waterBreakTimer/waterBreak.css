@@ -26,16 +26,15 @@
 .notify-text-water{
     position: absolute;
     width: 200px;
-    right: -225px;
-    top: -16px;
-    border: 1px solid;
-    border-radius: 100px/60px;
-    background: antiquewhite;
+    right: -200px;
+    top: -8px;
 }
 
-.notify-water-text{
-   width: 130px;
-   position: relative;
-   left: 40px;
-   top: 7px;
+.sticky-note-orange {
+	background: #FFBDA3;
+	-webkit-transform: rotate(1deg);
+	-moz-transform: rotate(1deg);
+	-o-transform: rotate(1deg);
+	-ms-transform: rotate(1deg);
+	transform: rotate(1deg);
 }
