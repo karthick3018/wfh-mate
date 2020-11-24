@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { Switch } from 'antd';
+import './uiStyles/switch.css';
 
 const Toggle = ({children,handleSwitchChange,checked}) => {
   const [on,setOn] = useState(false);
@@ -28,9 +29,9 @@ const ToggleButton = ({on,onChange}) => (<Switch checked={on} onChange={onChange
 
 const SwitchElement = ({label='Switch',handleSwitchChange,checked}) => {
   return (
-    <div>
+    <div className="switch-class">
       <Toggle handleSwitchChange={handleSwitchChange} checked={checked}>
-        <ToggleOn>{label}</ToggleOn>
+        <ToggleOn><div>{label}</div></ToggleOn>
         <ToggleButton/>
        </Toggle>
     </div>

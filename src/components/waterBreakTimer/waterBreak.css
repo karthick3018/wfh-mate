@@ -1,12 +1,18 @@
 .water-break-wrapper{
-  max-width: 48%;
+  max-width: 50%;
   width: 100%;
   padding: 10px;
-  border: 1px solid blue;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.set-water-break-wrapper{
+  margin-bottom: 80px;
+  color: aliceblue;
+  font-family: Englebert, Arial;
+  font-size: 18px;
 }
 
 .set-water-break{
@@ -19,10 +25,14 @@
   padding-left: 20px;
   justify-content: space-between;
   align-items: center;
+  color: black;
 }
 
 .water-break-control{
-  padding: 10px 0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .notify-text-water{

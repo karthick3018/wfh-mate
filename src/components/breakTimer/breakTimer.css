@@ -2,11 +2,17 @@
   max-width: 48%;
   width: 100%;
   padding: 10px;
-  border: 1px solid yellow;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.break-control-wrapper{
+  margin-bottom: 30px;
+  font-size: 18px;
+    font-family: Englebert, Arial;
+    color: aliceblue;
 }
 
 .set-break-wrapper{
@@ -19,12 +25,14 @@
   padding-left: 20px;
   justify-content: space-between;
   align-items: center;
+  color: #000;
 }
 
 .timer-control-wrapper{
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  justify-content: center;
+  padding: 10px 20px;
 }
 
 .switch-wrapper{

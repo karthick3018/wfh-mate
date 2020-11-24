@@ -7,6 +7,8 @@ import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
 import PlusIcon from '../icons/plus.svg';
 import MinusIcon from '../icons/minus.svg';
+import PlayButton from '../icons/play.svg';
+import StopButton from '../icons/stop.svg';
 import './waterBreak.css'
 
 const WaterBreakTimer = () => {
@@ -72,12 +74,13 @@ const WaterBreakTimer = () => {
         <div>
         <ProgressBar time={state} totalTime={waterBreakTime?.minutes}/>
         <div className="water-break-control">
-         <button onClick={handleStart}>start</button>
+        <figure className="timer-icons" onClick={handleStart}><img src={PlayButton} alt="play/pause"/></figure>
+        <figure className="timer-icons" ><img src={StopButton} alt="stop"/></figure>
         </div>
        </div> 
 
 
-       <div>
+       <div className="set-water-break-wrapper">
         <div className="set-water-break">
           <p>Water break on every </p>
           <div className="water-break-timer">

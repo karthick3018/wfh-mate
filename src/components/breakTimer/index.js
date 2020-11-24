@@ -112,7 +112,7 @@ const BreakTimer = ({onBreakChange}) => {
           <img className="tired-img" src ={TiredIllustration} alt="tired" />
         </figure>
       </div>
-     <div>
+     <div className="break-control-wrapper">
       <div className="set-break-wrapper">
         <p>Set break for</p>
         <div className="set-break-time">

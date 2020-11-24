@@ -12,6 +12,7 @@ const TextArea = () => {
   return (
     <div className="textBox-wrapper">
       <textarea 
+       placeholder="Note the important ones here..."
        onChange={handleTextAreaChange}
        value={state}
       />
