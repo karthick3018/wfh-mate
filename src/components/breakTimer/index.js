@@ -112,6 +112,7 @@ const BreakTimer = ({onBreakChange}) => {
           <img className="tired-img" src ={TiredIllustration} alt="tired" />
         </figure>
       </div>
+     <div>
       <div className="set-break-wrapper">
         <p>Set break for</p>
         <div className="set-break-time">
@@ -120,18 +121,20 @@ const BreakTimer = ({onBreakChange}) => {
            <figure className="set-break-icon" onClick={handleDecrement}><img src={MinusIcon} alt="minus"/> </figure>
         </div>
        </div>
-       
-       <div className="timer-control-wrapper">
+
+        <div className="switch-wrapper">
+        <Switch label={"Desktop notification"} handleSwitchChange={handleDesktopSwitchChange} checked={isEnableNotification}/>
+        <Switch label={"Alert tone"} handleSwitchChange={handleAlertSwitchChange} checked={isAlarmEnabled}/>
+        </div>
+      </div> 
+
+      <div>
+       <ProgressBar time={state} totalTime={state?.minutes}/>
+      <div className="timer-control-wrapper">
         <figure className="timer-icons" onClick={handleStart}><img src={PlayButton} alt="play/pause"/></figure>
         {/* <figure className="timer-icons" onClick={handlePause}><img src={PauseButton} alt="pause"/></figure> */}
         <figure className="timer-icons" onClick={handleEnd}><img src={StopButton} alt="stop"/></figure>
        </div>
-
-       <ProgressBar time={state} totalTime={state?.minutes}/>
-
-      <div className="switch-wrapper">
-       <Switch label={"Desktop notification"} handleSwitchChange={handleDesktopSwitchChange} checked={isEnableNotification}/>
-       <Switch label={"Alert tone"} handleSwitchChange={handleAlertSwitchChange} checked={isAlarmEnabled}/>
       </div>
 
        <DesktopNotification

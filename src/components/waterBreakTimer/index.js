@@ -68,26 +68,32 @@ const WaterBreakTimer = () => {
         <div className="notify-text-water">
           <p className="sticky-note-wrap sticky-note-orange sticky-note-wrap-text">Staying hydrated is an important one . Make sure you're drinking sufficient water...</p>
         </div>
-       <div className="set-water-break">
-        <p>Water break on every </p>
-        <div className="water-break-timer">
-          <figure className="set-break-icon" onClick={handleIncrement}>
-            <img src={PlusIcon} alt="play"/>
-          </figure>
-          <p>{waterBreakTime?.minutes}  mins</p>
-          <figure className="set-break-icon" onClick={handleDecrement}>
-            <img src={MinusIcon} alt="minus"/>
-          </figure>
+
+        <div>
+        <ProgressBar time={state} totalTime={waterBreakTime?.minutes}/>
+        <div className="water-break-control">
+         <button onClick={handleStart}>start</button>
         </div>
-       </div>
-       
-       <div className="water-break-control">
-        <button onClick={handleStart}>start</button>
-       </div>
+       </div> 
 
-       <ProgressBar time={state} totalTime={waterBreakTime?.minutes}/>
 
-       <Switch label={"Desktop notification"} handleSwitchChange={handleSwitchChange} checked={isEnableNotification}/>
+       <div>
+        <div className="set-water-break">
+          <p>Water break on every </p>
+          <div className="water-break-timer">
+            <figure className="set-break-icon" onClick={handleIncrement}>
+              <img src={PlusIcon} alt="play"/>
+            </figure>
+            <p>{waterBreakTime?.minutes}  mins</p>
+            <figure className="set-break-icon" onClick={handleDecrement}>
+              <img src={MinusIcon} alt="minus"/>
+            </figure>
+          </div>
+        </div>
+         <Switch label={"Desktop notification"} handleSwitchChange={handleSwitchChange} checked={isEnableNotification}/>
+         </div>
+     
+
 
        <DesktopNotification
         title="WFH mate"

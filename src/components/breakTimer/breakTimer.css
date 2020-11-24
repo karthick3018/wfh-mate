@@ -1,10 +1,12 @@
 .break-wrapper{
-  max-width: 40%;
+  max-width: 48%;
   width: 100%;
   padding: 10px;
   border: 1px solid yellow;
-  align-items: center;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .set-break-wrapper{
@@ -26,7 +28,6 @@
 }
 
 .switch-wrapper{
-  display: flex;
   align-items: center;
 }
 
