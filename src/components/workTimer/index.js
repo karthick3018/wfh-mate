@@ -4,29 +4,10 @@ import useTimer from '../../hooks/useTimer';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import './workTimer.css';
 
-const initialState = {
-  seconds:0,
-  minutes:0,
-  hours:0
-}
-
 const WorkTimer=({isNeedToPause})=> {
-  const [{state:existingValue,setState}] = useLocalStorage('timing',initialState);
+  const [{state:existingValue,setState}] = useLocalStorage('timing',null);
   const [{state:isStartClicked,setState:setStartClicked}] = useLocalStorage('isStartClicked',false);
-  const [{state:clearDate,setState:setClearTime}] = useLocalStorage('clearDate',null);
-  const [state] = useTimer(existingValue,isStartClicked);
-
-  useEffect(() => {
-    setState(state)
-  }, [state,setState])
-
-  useEffect(() => {
-     if(clearDate < new Date()){
-      setState(initialState)
-      setStartClicked(false)
-    }
-      
-  }, [clearDate])
+  const [state,setStartTime] = useTimer(existingValue,isStartClicked);
 
 
  /**
@@ -40,9 +21,8 @@ const WorkTimer=({isNeedToPause})=> {
 
   const handleStartClick = () => {
     setStartClicked(true);
-    var nextDay = new Date();
-    nextDay.setHours(nextDay.getHours() + 1)
-    setClearTime(nextDay)
+    setState(new Date().toLocaleTimeString())
+    setStartTime(new Date().toLocaleTimeString())
   }
 
   const handleEndClick = () => {

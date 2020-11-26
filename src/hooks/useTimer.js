@@ -1,4 +1,5 @@
 import {useState,useEffect} from 'react';
+import {checkTimeDifference} from '../helpers/time';
 
 const initialState = {
   seconds:0,
@@ -6,36 +7,28 @@ const initialState = {
   hours:0
 }
 
-const useTimer = (existingState=initialState,isStart=true) => {
-  const [state, setState] = useState(()=>existingState);
+const useTimer = (existingStartTime=new Date().toLocaleTimeString(),isStart=true) => {
+  const [state, setState] = useState(()=>initialState);
+  const [startTime,setStartTime] = useState(existingStartTime);
 
   useEffect(() => {
     let timer;
     if(isStart){
+      let letUpdatedTime= checkTimeDifference(startTime)
       timer = setTimeout(()=>{
-        if(state?.seconds<59){
-          setState(prevState => {
-           return {...prevState, seconds: prevState.seconds+1};
-         });
-        }
-        if(state?.seconds===59){
-         setState(prevState => {
-           return {...prevState, seconds:0,minutes:prevState.minutes+1};
-         });
-        }
-        if(state?.minutes===59){
-          setState(prevState => {
-           return {...prevState, seconds:0,minutes:0,hours:prevState.hours+1};
-         });
-        }
+        setState({
+           seconds:letUpdatedTime?._data?.seconds ,
+           minutes:letUpdatedTime?._data?.minutes,
+           hours:letUpdatedTime?._data?.hours
+        });
       },1000)
     }
 
     return () => clearTimeout(timer);
     
- },[state,isStart])
+ },[state, isStart, startTime])
 
- return [state]
+ return [state,setStartTime]
 
 }
 
