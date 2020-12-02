@@ -13,7 +13,7 @@ import MinusIcon from '../icons/minus.svg';
 import TiredIllustration from '../illustrations/tired.png';
 import './breakTimer.css';
 
-const BreakTimer = ({onBreakChange}) => {
+const BreakTimer = () => {
   const [breakTime,setBreakTime] = useState({
     seconds:0,
     minutes:5
@@ -24,24 +24,37 @@ const BreakTimer = ({onBreakChange}) => {
   const [{state:isAlarmEnabled,setState:setAlarmEnabled}] = useLocalStorage('isAlarmEnabled',true);
   const [state,setState] = useReduceTimer(existingValue,isBreakStartClicked)
   const [showDesktopNotification,setDesktopNotification] = useState(false);
+  let breakTimerSetIntervalTime;
+  const audio = new Audio(ALARM_TONE);
 
   useEffect(() => {
-    if(state?.seconds===0 && state?.minutes===0){
-       if(isEnableNotification){
+   setValueInLocalStore(state)
+  }, [state,isEnableNotification,isAlarmEnabled,setValueInLocalStore])
+
+  useEffect(()=>{
+    return (()=> clearInterval(breakTimerSetIntervalTime))
+  },[])
+
+  const handleSetInterval = () => {
+    breakTimerSetIntervalTime=setInterval(function(){
+      if(isEnableNotification){
         setDesktopNotification(true)
        }
        if(isAlarmEnabled){
          playAudio()
        }
-       handleEnd()
+       handleEnd(false)
+       }, state?.minutes*60000);
    }
-   setValueInLocalStore(state)
-  }, [state,isEnableNotification,isAlarmEnabled,setValueInLocalStore])
 
   const playAudio = () => {
-    const audio = new Audio(ALARM_TONE);
     audio.play();
   }
+
+  const stopAudio=(audio)=> {
+    audio.pause();
+    audio.currentTime = 0;
+}
 
 
   const handleIncrement = () => {
@@ -54,8 +67,8 @@ const BreakTimer = ({onBreakChange}) => {
           return {...prevState, minutes: prevState.minutes+5};
       })
     }
-    
   }
+
   const handleDecrement = () => {
      if(breakTime?.minutes>5)
      {
@@ -72,25 +85,25 @@ const BreakTimer = ({onBreakChange}) => {
   const handleStart = () => {
     setBreakStartClicked(!isBreakStartClicked);
    // setState(breakTime)
-    onBreakChange(true);
+    handleSetInterval()
   }
 
   const handlePause = () => {
     setBreakStartClicked(false);
-    onBreakChange(false);
   }
 
-  const handleEnd = () => {
+  const handleEnd = (fromIntervalFn=true) => {
     setBreakStartClicked(false);
     setValueInLocalStore({
       seconds:0,
-      minutes:5
+      minutes:breakTime?.minutes
     })
     setState({
       seconds:0,
-      minutes:5
+      minutes:breakTime?.minutes
     })
-    onBreakChange(false);
+    clearInterval(breakTimerSetIntervalTime)
+    fromIntervalFn && stopAudio(audio)
   }
 
   const resetValue = () => {
@@ -129,7 +142,7 @@ const BreakTimer = ({onBreakChange}) => {
       </div> 
 
       <div>
-       <ProgressBar time={state} totalTime={state?.minutes}/>
+       <ProgressBar time={state} totalTime={breakTime?.minutes}/>
       <div className="timer-control-wrapper">
         <figure className="timer-icons" onClick={handleStart}><img src={PlayButton} alt="play/pause"/></figure>
         {/* <figure className="timer-icons" onClick={handlePause}><img src={PauseButton} alt="pause"/></figure> */}
@@ -139,7 +152,7 @@ const BreakTimer = ({onBreakChange}) => {
 
        <DesktopNotification
         title="WFH mate"
-        body="hey karthick water break now"
+        body="hey karthick break time over!"
         showDesktopNotification = { isEnableNotification?showDesktopNotification:false }
         resetValue = { resetValue }
       />

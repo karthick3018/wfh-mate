@@ -39,13 +39,14 @@ const WaterBreakTimer = () => {
   },[])
 
 
-  const handleOnClick = () => {
+  const handleSetInterval = () => {
    waterTimerSetIntervalTime=setInterval(function(){
        setDesktopNotification(true) 
        setState({
          minutes:14,seconds:59
        })
-      }, 900000);
+       handleEnd();
+      }, waterBreakTime?.minutes * 60000);
   }
 
    
@@ -71,7 +72,12 @@ const WaterBreakTimer = () => {
   const handleStart = () => {
     setWaterBreakStartClicked(true);
     setState(waterBreakTime);
-    handleOnClick();
+    handleSetInterval();
+  }
+
+  const handleEnd = () => {
+    setWaterBreakStartClicked(false);
+    clearInterval(waterTimerSetIntervalTime);
   }
 
   const resetValue = () => {
@@ -92,7 +98,7 @@ const WaterBreakTimer = () => {
         <ProgressBar time={state} totalTime={waterBreakTime?.minutes}/>
         <div className="water-break-control">
         <figure className="timer-icons" onClick={handleStart}><img src={PlayButton} alt="play/pause"/></figure>
-        <figure className="timer-icons" ><img src={StopButton} alt="stop"/></figure>
+        <figure className="timer-icons" onClick={handleEnd}><img src={StopButton} alt="stop"/></figure>
         </div>
        </div> 
 

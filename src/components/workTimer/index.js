@@ -1,23 +1,13 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import Calender from '../../components/calender'
 import useTimer from '../../hooks/useTimer';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import './workTimer.css';
 
-const WorkTimer=({isNeedToPause})=> {
+const WorkTimer=()=> {
   const [{state:existingValue,setState}] = useLocalStorage('timing',null);
   const [{state:isStartClicked,setState:setStartClicked}] = useLocalStorage('isStartClicked',false);
   const [state,setStartTime] = useTimer(existingValue,isStartClicked);
-
-
- /**
- * @state  isNeedToPause -> it's opposite value is used since if break is true work should pause
-  **/
-
-  useEffect(() => {
-     if(isNeedToPause!==null) 
-     setStartClicked(!isNeedToPause) 
-  }, [isNeedToPause,setStartClicked])
 
   const handleStartClick = () => {
     setStartClicked(true);
