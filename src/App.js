@@ -8,7 +8,6 @@ import './App.css';
 const App=()=> {
   return (
      <div className="main-wrapper">
-       Here's wfh mate that can help you
        <div className="components-wrapper">
         <WorkTimer />
         <Note/>

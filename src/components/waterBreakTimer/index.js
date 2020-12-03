@@ -23,9 +23,8 @@ const WaterBreakTimer = () => {
   let waterTimerSetIntervalTime;
 
    
-    window.onbeforeunload = function() {
-      if(isWaterBreakStartClicked)
-      return "Hey you need to restart the break timers alone if you leave the page, are you sure?";
+    window.onbeforeunload = function(e) {
+      return 'err';
     };
    
 

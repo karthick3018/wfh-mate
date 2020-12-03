@@ -18,23 +18,17 @@ const BreakTimer = () => {
     seconds:0,
     minutes:5
   });
-  const [{state:existingValue,setState:setValueInLocalStore}] = useLocalStorage('breakTiming',breakTime);
-  const [{state:isBreakStartClicked,setState:setBreakStartClicked}] = useLocalStorage('isBreakStartClicked',false);
+  const [isBreakStartClicked,setBreakStartClicked] = useState(false);
   const [{state:isEnableNotification,setState:setEnableNotification}] = useLocalStorage('isDesktopNotificationBreak',true);
   const [{state:isAlarmEnabled,setState:setAlarmEnabled}] = useLocalStorage('isAlarmEnabled',true);
-  const [state,setState] = useReduceTimer(existingValue,isBreakStartClicked)
+  const [state,setState] = useReduceTimer(false,isBreakStartClicked)
   const [showDesktopNotification,setDesktopNotification] = useState(false);
   let breakTimerSetIntervalTime;
   const audio = new Audio(ALARM_TONE);
 
   window.onbeforeunload = function() {
-    if(isBreakStartClicked)
-    return "Hey you need to restart the break timers alone if you leave the page, are you sure?";
+      return 'err';
   };
-
-  useEffect(() => {
-   setValueInLocalStore(state)
-  }, [state,isEnableNotification,isAlarmEnabled,setValueInLocalStore])
 
   useEffect(()=>{
     return (()=> clearInterval(breakTimerSetIntervalTime))
@@ -49,7 +43,7 @@ const BreakTimer = () => {
          playAudio()
        }
        handleEnd(false)
-       }, state?.minutes*60000);
+       }, breakTime?.minutes * 60000);
    }
 
   const playAudio = () => {
@@ -89,7 +83,7 @@ const BreakTimer = () => {
 
   const handleStart = () => {
     setBreakStartClicked(!isBreakStartClicked);
-   // setState(breakTime)
+    setState(breakTime)
     handleSetInterval()
   }
 
@@ -99,10 +93,6 @@ const BreakTimer = () => {
 
   const handleEnd = (fromIntervalFn=true) => {
     setBreakStartClicked(false);
-    setValueInLocalStore({
-      seconds:0,
-      minutes:breakTime?.minutes
-    })
     setState({
       seconds:0,
       minutes:breakTime?.minutes
