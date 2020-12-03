@@ -27,6 +27,11 @@ const BreakTimer = () => {
   let breakTimerSetIntervalTime;
   const audio = new Audio(ALARM_TONE);
 
+  window.onbeforeunload = function() {
+    if(isBreakStartClicked)
+    return "Hey you need to restart the break timers alone if you leave the page, are you sure?";
+  };
+
   useEffect(() => {
    setValueInLocalStore(state)
   }, [state,isEnableNotification,isAlarmEnabled,setValueInLocalStore])

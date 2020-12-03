@@ -5,7 +5,7 @@ const initialState = {
   minutes:0,
 }
 
-const useReduceTimer = (existingState=initialState,isStart=true,isPause=true) => {
+const useReduceTimer = (existingState=initialState,isStart=false,isPause=true) => {
 
   const [state, setState] = useState(()=>existingState);
 
