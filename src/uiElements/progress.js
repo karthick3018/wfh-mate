@@ -20,7 +20,7 @@ const ProgressBar = ({time:{minutes=0,seconds=0},totalTime})=>{
        percent={progressValue}
        type="circle"
        strokeColor ="#FFBDA3"
-       format={() => `${minutes}:${seconds}`}
+       format={() => `${minutes<10?`0${minutes}`:minutes}:${seconds<10?`0${seconds}`:seconds}`}
       />
     </div>
   )

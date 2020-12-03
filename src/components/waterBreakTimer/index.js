@@ -45,7 +45,6 @@ const WaterBreakTimer = () => {
        setState({
          minutes:14,seconds:59
        })
-       handleEnd();
       }, waterBreakTime?.minutes * 60000);
   }
 

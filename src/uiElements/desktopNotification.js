@@ -7,7 +7,8 @@ const DesktopNotification = ({
   body,
   sound,
   showDesktopNotification,
-  resetValue
+  resetValue,
+  timing=4000
 }) => {
 
   const options = {
@@ -50,7 +51,7 @@ const DesktopNotification = ({
         onClick={handleNotificationOnClick}
         onClose={handleNotificationOnClose}
         onError={handleNotificationOnError}
-        timeout={4000}
+        timeout={timing}
         title={title}
         options={options}
        />}

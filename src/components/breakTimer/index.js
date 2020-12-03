@@ -153,6 +153,7 @@ const BreakTimer = () => {
        <DesktopNotification
         title="WFH mate"
         body="hey karthick break time over!"
+        timing ={8000}
         showDesktopNotification = { isEnableNotification?showDesktopNotification:false }
         resetValue = { resetValue }
       />
