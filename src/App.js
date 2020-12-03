@@ -14,6 +14,7 @@ const App=()=> {
         <div className="break-wrap">
           <BreakTimer />
           <WaterBreakTimer />
+          <p className="clear-note">*only this part will reset during page refresh</p>
         </div>
        </div>
      </div>
