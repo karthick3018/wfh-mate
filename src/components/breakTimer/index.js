@@ -5,8 +5,8 @@ import {ALARM_TONE} from '../../helpers/sounds';
 import DesktopNotification from '../../uiElements/desktopNotification';
 import useLocalStorage  from '../../hooks/useLocalStorage';
 import useReduceTimer from '../../hooks/useReduceTimer';
+import useBreakTimer from '../../hooks/useBreakTimer';
 import PlayButton from '../icons/play.svg';
-import PauseButton from '../icons/video-pause-button.svg';
 import StopButton from '../icons/stop.svg';
 import PlusIcon from '../icons/plus.svg';
 import MinusIcon from '../icons/minus.svg';
@@ -22,6 +22,7 @@ const BreakTimer = () => {
   const [{state:isEnableNotification,setState:setEnableNotification}] = useLocalStorage('isDesktopNotificationBreak',true);
   const [{state:isAlarmEnabled,setState:setAlarmEnabled}] = useLocalStorage('isAlarmEnabled',true);
   const [state,setState] = useReduceTimer(false,isBreakStartClicked)
+  const [timer] = useBreakTimer()
   const [showDesktopNotification,setDesktopNotification] = useState(false);
   let breakTimerSetIntervalTime;
   const audio = new Audio(ALARM_TONE);
@@ -93,11 +94,15 @@ const BreakTimer = () => {
 
   const handleEnd = (fromIntervalFn=true) => {
     setBreakStartClicked(false);
+    timer({
+      breakTaken : state,
+      totalBreak : breakTime?.minutes
+    })
     setState({
       seconds:0,
       minutes:breakTime?.minutes
     })
-    clearInterval(breakTimerSetIntervalTime)
+    window.clearInterval(breakTimerSetIntervalTime)
     fromIntervalFn && stopAudio(audio)
   }
 
