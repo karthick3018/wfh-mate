@@ -11,7 +11,7 @@ const useBreakTimer = () => {
       let isAlreadyDone = false;
 
       if(result?.hours === 0 && result?.minutes === 0 && result?.seconds === 0){
-        result.minutes = (state?.totalBreak === state?.breakTaken?.minutes) ? state?.totalBreak : (state?.totalBreak - state?.breakTaken?.minutes)
+        result.minutes = (state?.totalBreak === state?.breakTaken?.minutes) ? state?.totalBreak : ((state?.totalBreak-1) - state?.breakTaken?.minutes)
         result.seconds = 60-(state?.breakTaken?.seconds > 0 ?state?.breakTaken?.seconds : 60);
         isAlreadyDone = true
       }
