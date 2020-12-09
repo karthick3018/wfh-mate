@@ -11,6 +11,7 @@ import PlayButton from '../icons/play.svg';
 import StopButton from '../icons/stop.svg';
 import './waterBreak.css'
 
+var waterTimerSetIntervalTime=0;
 const WaterBreakTimer = () => {
   const [waterBreakTime,setWaterBreakTime] = useState({
     seconds:0,
@@ -20,7 +21,6 @@ const WaterBreakTimer = () => {
   const [isWaterBreakStartClicked,setWaterBreakStartClicked] = useState(false);
   const [{state:isEnableNotification,setState:setEnableNotification}] = useLocalStorage('isDesktopNotificationWater',true);
   const [state,setState] = useReduceTimer(false,isWaterBreakStartClicked)
-  let waterTimerSetIntervalTime;
 
    
     window.onbeforeunload = function(e) {

@@ -13,6 +13,8 @@ import MinusIcon from '../icons/minus.svg';
 import TiredIllustration from '../illustrations/tired.png';
 import './breakTimer.css';
 
+var breakTimerSetIntervalTime=0;
+const audio = new Audio(ALARM_TONE);
 const BreakTimer = () => {
   const [breakTime,setBreakTime] = useState({
     seconds:0,
@@ -24,8 +26,6 @@ const BreakTimer = () => {
   const [state,setState] = useReduceTimer(false,isBreakStartClicked)
   const [timer] = useBreakTimer()
   const [showDesktopNotification,setDesktopNotification] = useState(false);
-  let breakTimerSetIntervalTime;
-  const audio = new Audio(ALARM_TONE);
 
   window.onbeforeunload = function() {
       return 'err';
@@ -95,7 +95,7 @@ const BreakTimer = () => {
   const handleEnd = (fromIntervalFn=true) => {
     setBreakStartClicked(false);
     timer({
-      breakTaken : state,
+      breakTaken : fromIntervalFn ? state: breakTime,
       totalBreak : breakTime?.minutes
     })
     setState({
