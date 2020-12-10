@@ -23,7 +23,8 @@ const useBreakTimer = () => {
       }
 
       if((state?.totalBreak-(state?.breakTaken?.minutes) + existingBreakTime?.minutes) > 59){
-        result.hours = result?.hours + 1
+        result.hours = result?.hours + 1;
+        result.minutes = 0
         isAlreadyDone = true
       }
 

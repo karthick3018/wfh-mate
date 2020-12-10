@@ -20,13 +20,7 @@ const WaterBreakTimer = () => {
   const [showDesktopNotification,setDesktopNotification] = useState(false);
   const [isWaterBreakStartClicked,setWaterBreakStartClicked] = useState(false);
   const [{state:isEnableNotification,setState:setEnableNotification}] = useLocalStorage('isDesktopNotificationWater',true);
-  const [state,setState] = useReduceTimer(false,isWaterBreakStartClicked)
-
-   
-    window.onbeforeunload = function(e) {
-      return 'err';
-    };
-   
+  const [state,setState] = useReduceTimer({minutes:0,seconds:0},isWaterBreakStartClicked)
 
   useEffect(() => {
     if(state?.seconds===0 && state?.minutes===0){
@@ -35,6 +29,11 @@ const WaterBreakTimer = () => {
       });
    }
   }, [state, setState, waterBreakTime])
+
+  useEffect(()=>{
+    return (()=> clearInterval(waterTimerSetIntervalTime))
+  },[])
+
 
 
   const handleSetInterval = () => {

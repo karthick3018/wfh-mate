@@ -23,7 +23,7 @@ const BreakTimer = () => {
   const [isBreakStartClicked,setBreakStartClicked] = useState(false);
   const [{state:isEnableNotification,setState:setEnableNotification}] = useLocalStorage('isDesktopNotificationBreak',true);
   const [{state:isAlarmEnabled,setState:setAlarmEnabled}] = useLocalStorage('isAlarmEnabled',true);
-  const [state,setState] = useReduceTimer(false,isBreakStartClicked)
+  const [state,setState] = useReduceTimer({minutes:5,seconds:0},isBreakStartClicked)
   const [timer] = useBreakTimer()
   const [showDesktopNotification,setDesktopNotification] = useState(false);
 
