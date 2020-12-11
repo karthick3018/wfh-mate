@@ -43,6 +43,7 @@ const WorkTimer=()=> {
          <div className="control-button-inner">End Work</div>
        </div>
        <Calender/>
+       <button onClick={()=>setModalVisible(!isModalOpen)}>open modal</button>
        <ModalAtom
         isModalOpen = { isModalOpen }
         workDone = { state }
