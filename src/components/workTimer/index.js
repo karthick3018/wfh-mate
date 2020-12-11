@@ -8,7 +8,7 @@ import './workTimer.css';
 const WorkTimer=()=> {
   const [{state:existingValue,setState}] = useLocalStorage('timing',null);
   const [{state:isStartClicked,setState:setStartClicked}] = useLocalStorage('isStartClicked',false);
-  const [{state:totalBreakTaken,setState:setTotalBreakTaken}] = useLocalStorage('breakTaken',{hours:0,minutes:0,seconds:0});
+  const [{setState:setTotalBreakTaken}] = useLocalStorage('breakTaken',{hours:0,minutes:0,seconds:0});
   const [state,setStartTime] = useTimer(existingValue,isStartClicked);
   const [isModalOpen,setModalVisible] = useState(false);
 
@@ -44,12 +44,12 @@ const WorkTimer=()=> {
        </div>
        <Calender/>
        <button onClick={()=>setModalVisible(!isModalOpen)}>open modal</button>
+       {isModalOpen &&
        <ModalAtom
         isModalOpen = { isModalOpen }
         workDone = { state }
-        totalBreakTaken = { totalBreakTaken }
         handleModalClose = { handleModalClose }
-       />
+       />}
        </div> 
   );
 }

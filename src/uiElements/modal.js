@@ -1,13 +1,15 @@
 import React from 'react';
 import {Modal} from 'antd';
 import './uiStyles/modal.css';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 const ModalAtom = ({
   isModalOpen,
   workDone,
-  totalBreakTaken,
   handleModalClose
 }) => {
+  const [{state:totalBreakTaken,setState:setTotalBreakTaken}] = useLocalStorage('breakTaken',{hours:0,minutes:0,seconds:0});
+
   return (
     <>
       <Modal
