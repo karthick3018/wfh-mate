@@ -35,6 +35,18 @@ border: 1px solid rgba(0,0,0,0.01);
   height: 100px;
 }
 
+.control-button:hover:after {
+  -webkit-transform: scale(0.85);
+  -moz-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  transform: scale(0.85);
+  opacity: 0.5;
+}
+
+.control-button:hover {
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 1);
+}
+
 .control-button-inner{
   width: 90px;
   height: 90px;
