@@ -22,6 +22,10 @@
   top: -190px;
 }
 
+.mate-image-wrapper:hover{
+  transform: rotateY(-180deg) ;
+}
+
 .mate-figure{
   max-width: 200px;
 }
