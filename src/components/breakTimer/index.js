@@ -58,7 +58,7 @@ const BreakTimer = () => {
 
 
   const handleIncrement = () => {
-    if(breakTime?.minutes<45)
+    if(breakTime?.minutes<25)
     {
       setBreakTime(prevBreakTime => {
         return {...prevBreakTime, minutes: prevBreakTime.minutes+5};

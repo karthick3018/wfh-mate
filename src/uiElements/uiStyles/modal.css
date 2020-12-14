@@ -1,11 +1,14 @@
 .result-area{
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 400;
   font-family: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .time-taken {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 800;
   font-family: fangsong;
 }
@@ -20,4 +23,14 @@
   font-weight: 300;
   font-family: cursive;
   color: #fb590a;
+  width: 150px;
+  padding-top: 10px;
+}
+
+.vertical-line{
+  margin-right: 30px;
+  height: 224px;
+  width: 1px;
+  background-color: #9E9E9E;
+  padding-right: 3px;
 }
