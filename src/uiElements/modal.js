@@ -9,7 +9,7 @@ const ModalAtom = ({
   workDone,
   handleModalClose
 }) => {
-  const [{state:totalBreakTaken,setState:setTotalBreakTaken}] = useLocalStorage('breakTaken',{hours:0,minutes:0,seconds:0});
+  const [{state:totalBreakTaken}] = useLocalStorage('breakTaken',{hours:0,minutes:0,seconds:0});
 
   return (
     <>
@@ -21,12 +21,11 @@ const ModalAtom = ({
       >
         <div className="result-area">
           <div>
-            <p>Total Hours Worked <span className="time-taken">{workDone?.hours<10?`0${workDone?.hours}`:workDone?.hours}:{workDone?.minutes<10?`0${workDone?.minutes}`:workDone?.minutes}:{workDone?.seconds<10?`0${workDone?.seconds}`:workDone?.seconds}</span></p>
+            <p>Total Hours Worked </p>
             <ProgressBar time={workDone} percent={100} />
           </div>
-          <hr className="vertical-line"/>
           <div>
-            <p>Total Break taken <span className="time-taken">{totalBreakTaken?.hours<10?`0${totalBreakTaken?.hours}`:totalBreakTaken?.hours}:{totalBreakTaken?.minutes<10?`0${totalBreakTaken?.minutes}`:totalBreakTaken?.minutes}:{totalBreakTaken?.seconds<10?`0${totalBreakTaken?.seconds}`:totalBreakTaken?.seconds}</span> <span className="approx">(*approx)</span></p>
+            <p>Total Break taken  <span className="approx">(*approx)</span></p>
             <ProgressBar time={totalBreakTaken} percent={100} />
           </div>
         </div>
