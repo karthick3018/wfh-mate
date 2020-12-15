@@ -8,8 +8,8 @@ const Note = () => {
   return (
     <div className="notes-wrapper">
       <div className="notify-text">
+        <p className="sticky-note-wrap sticky-note-blue sticky-note-wrap-text">Check how long you're working! Start,End Work button helps U</p>
         <p className="sticky-note-wrap sticky-note-blue sticky-note-wrap-text">Don't test your memory skills in the list of work to do!! Make a note...</p>
-        <p className="sticky-note-wrap sticky-note-blue sticky-note-wrap-text">Taking a quick break can really help to solve things - karthick(me)😉</p>
       </div>
       <TextArea 
        

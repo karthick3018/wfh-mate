@@ -15,6 +15,7 @@ const TextArea = () => {
        placeholder="Note the important ones here..."
        onChange={handleTextAreaChange}
        value={state}
+       draggable={false}
       />
     </div>
   )

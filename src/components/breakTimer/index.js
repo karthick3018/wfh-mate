@@ -88,10 +88,6 @@ const BreakTimer = () => {
     handleSetInterval()
   }
 
-  const handlePause = () => {
-    setBreakStartClicked(false);
-  }
-
   const handleEnd = (fromIntervalFn=true) => {
     setBreakStartClicked(false);
     timer({

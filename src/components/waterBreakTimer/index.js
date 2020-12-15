@@ -15,7 +15,7 @@ var waterTimerSetIntervalTime=0;
 const WaterBreakTimer = () => {
   const [waterBreakTime,setWaterBreakTime] = useState({
     seconds:0,
-    minutes:15
+    minutes:20
   });
   const [showDesktopNotification,setDesktopNotification] = useState(false);
   const [isWaterBreakStartClicked,setWaterBreakStartClicked] = useState(false);
@@ -40,29 +40,33 @@ const WaterBreakTimer = () => {
    waterTimerSetIntervalTime=setInterval(function(){
        setDesktopNotification(true) 
        setState({
-         minutes:14,seconds:59
+         minutes:19,seconds:59
        })
       }, waterBreakTime?.minutes * 60000);
   }
 
    
   const handleIncrement = () => {
-    if(waterBreakTime?.minutes<60)
-    setWaterBreakTime(prevBreakTime => {
-      return {...prevBreakTime, minutes: prevBreakTime.minutes+15};
-    });
-    setState(prevState=>{
-      return {...prevState, minutes: prevState.minutes+15};
-    })
+    if(waterBreakTime?.minutes<30){
+      setWaterBreakTime(prevBreakTime => {
+        return {...prevBreakTime, minutes: prevBreakTime.minutes+10};
+      });
+      setState(prevState=>{
+        return {...prevState, minutes: prevState.minutes+10};
+      })
+    }
+  
   }
   const handleDecrement = () => {
-     if(waterBreakTime?.minutes>15)
-     setWaterBreakTime(prevBreakTime => {
-      return {...prevBreakTime, minutes: prevBreakTime.minutes-15};
-    });
-    setState(prevState=>{
-      return {...prevState, minutes: prevState.minutes-15};
-    })
+     if(waterBreakTime?.minutes>20){
+      setWaterBreakTime(prevBreakTime => {
+        return {...prevBreakTime, minutes: prevBreakTime.minutes-10};
+      });
+      setState(prevState=>{
+        return {...prevState, minutes: prevState.minutes-10};
+      })
+     }
+    
   }
 
   const handleStart = () => {
@@ -91,7 +95,7 @@ const WaterBreakTimer = () => {
   return (
     <div className="water-break-wrapper">
         <div className="notify-text-water">
-          <p className="sticky-note-wrap sticky-note-orange sticky-note-wrap-text">Staying hydrated is an important one . Make sure you're drinking sufficient water...</p>
+          <p className="sticky-note-wrap sticky-note-orange sticky-note-wrap-text">Make sure you're drinking sufficient water,Also follow 20-20-20 rule.Taking a break really helps to solve things<span role="img" aria-labelledby="wink">😉</span> </p>
         </div>
 
         <div>
