@@ -21,7 +21,7 @@ const TodoElement = () => {
     
     if(e.key === "Backspace" || e.key === "Delete"){
       let updatedValue = [...todoValues];
-      if(!todoValues[index].todoText){
+      if(!todoValues[index].todoText && updatedValue.length>1){
         updatedValue.splice(index,1)
         setTodoValues(updatedValue)
       }

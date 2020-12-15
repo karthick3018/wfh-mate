@@ -95,7 +95,7 @@ const WaterBreakTimer = () => {
   return (
     <div className="water-break-wrapper">
         <div className="notify-text-water">
-          <p className="sticky-note-wrap sticky-note-orange sticky-note-wrap-text">Make sure you're drinking sufficient water,Also follow 20-20-20 rule.Taking a break really helps to solve things<span role="img" aria-labelledby="wink">😉</span> </p>
+          <p className="sticky-note-wrap sticky-note-orange sticky-note-wrap-text">Make sure you're drinking sufficient water,Also follow 20-20-20 rule.Taking a break really helps to solve things...<span role="img" aria-labelledby="wink">😉</span> </p>
         </div>
 
         <div>
