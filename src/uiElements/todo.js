@@ -10,7 +10,7 @@ const TodoElement = () => {
   const [{state:todoValues,setState:setTodoValues}] = useLocalStorage('todoList',initialData);
 
   const handleKeyPress = (e,index) => {
-    if(e.key==='Enter' && !e.shiftKey){
+    if(e.key==='Enter' && !e.shiftKey &&todoValues.length<10){
       e.preventDefault()
       let newTodoElement = {id:todoValues.length,completed:false,todoText:''}
       setTodoValues([

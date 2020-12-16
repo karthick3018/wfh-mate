@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import {Helmet} from "react-helmet";
 import Calender from '../../components/calender';
 import ModalAtom from '../../uiElements/modal';
 import useTimer from '../../hooks/useTimer';
@@ -11,6 +12,8 @@ const WorkTimer=()=> {
   const [{setState:setTotalBreakTaken}] = useLocalStorage('breakTaken',{hours:0,minutes:0,seconds:0});
   const [state,setStartTime] = useTimer(existingValue,isStartClicked);
   const [isModalOpen,setModalVisible] = useState(false);
+  const date = new Date()
+
 
 
   const handleStartClick = () => {
@@ -31,6 +34,11 @@ const WorkTimer=()=> {
 
   return (
       <div className="work-timer-wrap">
+         <Helmet>
+                <title>{`wfh-mate -${date.toLocaleDateString()} ${state?.hours ? `- worked hours ${state?.hours}`:''}`}</title>
+                <meta name="description" content="Work from home helper application" />
+
+         </Helmet>
        <div className="control-button" onClick={handleStartClick}>
          <div className="control-button-inner">Start Work</div>
        </div>
