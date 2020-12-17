@@ -140,8 +140,8 @@ const BreakTimer = () => {
       <div>
        <ProgressBar time={state} totalTime={breakTime?.minutes}/>
       <div className="timer-control-wrapper">
-        <figure className="timer-icons" onClick={handleStart}><img src={PlayButton} alt="play/pause"/></figure>
-        <figure className="timer-icons" onClick={handleEnd}><img src={StopButton} alt="stop"/></figure>
+        <figure className="timer-icons" onClick={handleStart}><img className="timer-img" src={PlayButton} alt="play/pause"/></figure>
+        <figure className="timer-icons" onClick={handleEnd}><img className="timer-img"  src={StopButton} alt="stop"/></figure>
        </div>
       </div>
 

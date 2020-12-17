@@ -101,8 +101,8 @@ const WaterBreakTimer = () => {
         <div>
         <ProgressBar time={state} totalTime={waterBreakTime?.minutes}/>
         <div className="water-break-control">
-        <figure className="timer-icons" onClick={handleStart}><img src={PlayButton} alt="play/pause"/></figure>
-        <figure className="timer-icons" onClick={handleEnd}><img src={StopButton} alt="stop"/></figure>
+        <figure className="timer-icons" onClick={handleStart}><img className="timer-img"  src={PlayButton} alt="play/pause"/></figure>
+        <figure className="timer-icons" onClick={handleEnd}><img className="timer-img" src={StopButton} alt="stop"/></figure>
         </div>
        </div> 
 
@@ -112,7 +112,7 @@ const WaterBreakTimer = () => {
           <p>Water break on every </p>
           <div className="water-break-timer">
             <figure className="set-break-icon" onClick={handleIncrement}>
-              <img src={PlusIcon} alt="play"/>
+              <img  src={PlusIcon} alt="play"/>
             </figure>
             <p>{waterBreakTime?.minutes}  mins</p>
             <figure className="set-break-icon" onClick={handleDecrement}>

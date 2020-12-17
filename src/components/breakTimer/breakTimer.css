@@ -45,6 +45,12 @@
   margin-right: 20px;
 }
 
+.timer-img:hover{
+  background: aliceblue;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
 .set-break-icon,.timer-icons:hover{
   cursor: pointer;
 }

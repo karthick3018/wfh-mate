@@ -28,6 +28,12 @@
   color: black;
 }
 
+.timer-img:hover{
+  background: aliceblue;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
 .water-break-control{
   padding: 10px 20px;
   display: flex;
