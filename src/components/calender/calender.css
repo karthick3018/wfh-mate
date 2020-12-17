@@ -30,3 +30,15 @@
   margin:0;
   opacity: 0.2;
 }
+.calender{
+  position: relative;
+}
+.monthly-calender-wrapper{
+  position: absolute;
+  z-index: 99;
+  width: 300px;
+  background: #eef0f4;
+  box-shadow: 8px 5px 10px #43144c, -10px -10px 10px #0000;
+  top:154px;
+  left: 40px;
+}
