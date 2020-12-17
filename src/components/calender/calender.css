@@ -16,13 +16,13 @@
   font-size: 20px;
   text-transform: uppercase;
   color: #ee5222;
-  font-weight: bold;
+  font-weight: 800;
   margin: 0;
 }
 
 .date {
   font-size: 60px;
-  font-weight: bold;
+  font-weight: 800;
   margin: 0;
 }
 
@@ -38,7 +38,7 @@
   z-index: 99;
   width: 300px;
   background: #eef0f4;
-  box-shadow: 8px 5px 10px #43144c, -10px -10px 10px #0000;
+  box-shadow: 1px -1px 1px #0000, -4px -3px 9px #8b7c8e;
   top:154px;
   left: 40px;
 }
