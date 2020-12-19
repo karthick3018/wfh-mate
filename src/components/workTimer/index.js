@@ -35,7 +35,7 @@ const WorkTimer=()=> {
   return (
       <div className="work-timer-wrap">
          <Helmet>
-                <title>{`wfh-mate -${date.toLocaleDateString()} ${state?.hours ? `- worked hours ${state?.hours}`:''}`}</title>
+                <title>{`wfh-mate -${date.toLocaleDateString()} ${state?.hours ? `- worked for ${state?.hours}:${state?.minutes}`:''}`}</title>
                 <meta name="description" content="Work from home helper application" />
 
          </Helmet>

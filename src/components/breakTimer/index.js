@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import Switch from '../../uiElements/switch';
+import { Tooltip } from 'antd';
 import ProgressBar from '../../uiElements/progress';
 import {ALARM_TONE} from '../../helpers/sounds';
 import DesktopNotification from '../../uiElements/desktopNotification';
@@ -116,11 +117,14 @@ const BreakTimer = () => {
 
   return (
     <div className="break-wrapper">
+      <Tooltip  placement="bottomRight" title="Tired ? No clue ? Taking a break really helps to solve things...😉">
       <div className="tired-img-wrapper">
         <figure className="tired-img-figure">
           <img className="tired-img" src ={TiredIllustration} alt="tired" />
         </figure>
       </div>
+      </Tooltip>
+
      <div className="break-control-wrapper">
       <div className="set-break-wrapper">
         <p>Set break for</p>
