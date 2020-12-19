@@ -1,5 +1,6 @@
 textarea {
   max-height: 280px;
+  min-height: 180px;
   height: 200px;
   width: 500px;
   border-radius: 10px;
