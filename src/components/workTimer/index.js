@@ -20,12 +20,12 @@ const WorkTimer=()=> {
     setStartClicked(true);
     setState(new Date().toLocaleTimeString())
     setStartTime(new Date().toLocaleTimeString())
-    setTotalBreakTaken({hours:0,minutes:0,seconds:0})
   }
 
   const handleEndClick = () => {
      setStartClicked(false);
      setModalVisible(true);
+     setTotalBreakTaken({hours:0,minutes:0,seconds:0})
   }
 
   const handleModalClose = () => {
