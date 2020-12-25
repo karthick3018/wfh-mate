@@ -127,7 +127,7 @@ const WaterBreakTimer = () => {
 
        <DesktopNotification
         title="WFH mate"
-        body="hey karthick water break now"
+        body="hey mate water break now"
         sound={WATER_TONE}
         showDesktopNotification = { isEnableNotification?showDesktopNotification:false }
         resetValue = { resetValue }
