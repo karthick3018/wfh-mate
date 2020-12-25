@@ -4,6 +4,7 @@ import useLocalStorage  from './useLocalStorage';
 const useBreakTimer = () => {
   const [{state:totalBreakTaken,setState:setTotalBreakTaken}] = useLocalStorage('breakTaken',{hours:0,minutes:0,seconds:0});
   const [state,setState] = useState(null);
+  const [totalBreakTime,setTotalBreakTiming] = useState(5)
 
   const updateBreakTimer = (existingBreakTime,state) => {
     if(state?.breakTaken){
@@ -22,7 +23,7 @@ const useBreakTimer = () => {
         isAlreadyDone = true
       }
 
-      if((state?.totalBreak-(state?.breakTaken?.minutes) + existingBreakTime?.minutes) > 59){
+      if(((totalBreakTime-(state?.breakTaken?.minutes < totalBreakTaken ? state?.breakTaken?.minutes: 0)) + existingBreakTime?.minutes) > 59){
         result.hours = result?.hours + 1;
         result.minutes = 0
         isAlreadyDone = true
@@ -48,7 +49,7 @@ const useBreakTimer = () => {
       updateBreakTimer(existingBreakTime,state);
   }, [state])
 
-  return [setState]
+  return [setState,setTotalBreakTiming]
 }
 
 export default useBreakTimer

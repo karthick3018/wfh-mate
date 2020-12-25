@@ -25,7 +25,7 @@ const BreakTimer = () => {
   const [{state:isEnableNotification,setState:setEnableNotification}] = useLocalStorage('isDesktopNotificationBreak',true);
   const [{state:isAlarmEnabled,setState:setAlarmEnabled}] = useLocalStorage('isAlarmEnabled',true);
   const [state,setState] = useReduceTimer({minutes:5,seconds:0},isBreakStartClicked)
-  const [timer] = useBreakTimer()
+  const [timer,setTotalBreakTiming] = useBreakTimer()
   const [showDesktopNotification,setDesktopNotification] = useState(false);
 
   window.onbeforeunload = function() {
@@ -86,6 +86,7 @@ const BreakTimer = () => {
   const handleStart = () => {
     setBreakStartClicked(!isBreakStartClicked);
     setState(breakTime)
+    setTotalBreakTiming(breakTime?.minutes)
     handleSetInterval()
   }
 
