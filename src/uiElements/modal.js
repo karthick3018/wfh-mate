@@ -22,11 +22,11 @@ const ModalAtom = ({
         <div className="result-area">
           <div>
             <p>Total Hours Worked </p>
-            <ProgressBar time={workDone} percent={100} />
+            <ProgressBar width={170}  time={workDone} percent={100} />
           </div>
           <div>
             <p>Total Break taken  <span className="approx">(*approx)</span></p>
-            <ProgressBar time={totalBreakTaken} percent={100} />
+            <ProgressBar width={170} time={totalBreakTaken} percent={100} />
           </div>
         </div>
           {workDone?.hours > 9 && <p className="warning-text">hey working more than 10 hrs<span role="img" aria-labelledby="shock">😲</span>!!  take care of your health too</p>}
