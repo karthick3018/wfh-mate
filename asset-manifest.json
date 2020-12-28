@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/wfh-mate/static/css/main.2fab71a8.chunk.css",
+    "main.js": "/wfh-mate/static/js/main.2feee073.chunk.js",
+    "main.js.map": "/wfh-mate/static/js/main.2feee073.chunk.js.map",
+    "runtime-main.js": "/wfh-mate/static/js/runtime-main.492eb709.js",
+    "runtime-main.js.map": "/wfh-mate/static/js/runtime-main.492eb709.js.map",
+    "static/css/2.00a338ba.chunk.css": "/wfh-mate/static/css/2.00a338ba.chunk.css",
+    "static/js/2.0e7df2a0.chunk.js": "/wfh-mate/static/js/2.0e7df2a0.chunk.js",
+    "static/js/2.0e7df2a0.chunk.js.map": "/wfh-mate/static/js/2.0e7df2a0.chunk.js.map",
+    "index.html": "/wfh-mate/index.html",
+    "precache-manifest.a7e49481258aa46b63a4de484b84d51b.js": "/wfh-mate/precache-manifest.a7e49481258aa46b63a4de484b84d51b.js",
+    "service-worker.js": "/wfh-mate/service-worker.js",
+    "static/css/2.00a338ba.chunk.css.map": "/wfh-mate/static/css/2.00a338ba.chunk.css.map",
+    "static/css/main.2fab71a8.chunk.css.map": "/wfh-mate/static/css/main.2fab71a8.chunk.css.map",
+    "static/js/2.0e7df2a0.chunk.js.LICENSE.txt": "/wfh-mate/static/js/2.0e7df2a0.chunk.js.LICENSE.txt",
+    "static/media/mate.png": "/wfh-mate/static/media/mate.985ddc7d.png",
+    "static/media/minus.svg": "/wfh-mate/static/media/minus.35493834.svg",
+    "static/media/play.svg": "/wfh-mate/static/media/play.ef083f73.svg",
+    "static/media/plus.svg": "/wfh-mate/static/media/plus.4874204c.svg",
+    "static/media/stop.svg": "/wfh-mate/static/media/stop.e412b71f.svg",
+    "static/media/tired.png": "/wfh-mate/static/media/tired.ffc21062.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.492eb709.js",
+    "static/css/2.00a338ba.chunk.css",
+    "static/js/2.0e7df2a0.chunk.js",
+    "static/css/main.2fab71a8.chunk.css",
+    "static/js/main.2feee073.chunk.js"
+  ]
+}
