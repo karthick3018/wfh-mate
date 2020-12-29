@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a61317f33fd4eae22e81aac9f6ba4dd",
+    "revision": "22d26c2cfb28f1b859792498514609f6",
     "url": "/wfh-mate/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wfh-mate/static/css/2.00a338ba.chunk.css"
   },
   {
-    "revision": "8314edfd34c8121333d3",
-    "url": "/wfh-mate/static/css/main.2fab71a8.chunk.css"
+    "revision": "d07c568bad04beed4d10",
+    "url": "/wfh-mate/static/css/main.fbdd4534.chunk.css"
   },
   {
     "revision": "1d74d5623994b13d8732",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wfh-mate/static/js/2.0e7df2a0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8314edfd34c8121333d3",
-    "url": "/wfh-mate/static/js/main.2feee073.chunk.js"
+    "revision": "d07c568bad04beed4d10",
+    "url": "/wfh-mate/static/js/main.4c180c41.chunk.js"
   },
   {
     "revision": "b91e329cc02a7ae47f4e",
