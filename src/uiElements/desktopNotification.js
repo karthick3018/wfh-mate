@@ -19,38 +19,22 @@ const DesktopNotification = ({
     dir: 'ltr',
   }
 
-
-  const handleNotSupported = () => {
-
-  }
-
-  const handleNotificationOnClick = () => {
-
-  }
-
-  const handleNotificationOnClose = () => {
-  }
-
-  const handleNotificationOnError = () => {
-
+  const onPermissionDenied = () => {
+     alert('Allow notification in site settings to achieve the functionality!')
   }
 
   const handleOnShow = () => {
     resetValue()
-    const audio = new Audio(sound);
-    audio.play();
   }
 
   return (
     <div>
-      {showDesktopNotification &&  
+      {
        <Notification
+        ignore ={!showDesktopNotification}
         askAgain = {true}
-        notSupported={handleNotSupported}
         onShow={handleOnShow}
-        onClick={handleNotificationOnClick}
-        onClose={handleNotificationOnClose}
-        onError={handleNotificationOnError}
+        onPermissionDenied = {onPermissionDenied}
         timeout={4000}
         title={title}
         options={options}
