@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/wfh-mate/static/css/main.fbdd4534.chunk.css",
-    "main.js": "/wfh-mate/static/js/main.4c180c41.chunk.js",
-    "main.js.map": "/wfh-mate/static/js/main.4c180c41.chunk.js.map",
+    "main.css": "/wfh-mate/static/css/main.99df1309.chunk.css",
+    "main.js": "/wfh-mate/static/js/main.29587add.chunk.js",
+    "main.js.map": "/wfh-mate/static/js/main.29587add.chunk.js.map",
     "runtime-main.js": "/wfh-mate/static/js/runtime-main.492eb709.js",
     "runtime-main.js.map": "/wfh-mate/static/js/runtime-main.492eb709.js.map",
     "static/css/2.00a338ba.chunk.css": "/wfh-mate/static/css/2.00a338ba.chunk.css",
-    "static/js/2.0e7df2a0.chunk.js": "/wfh-mate/static/js/2.0e7df2a0.chunk.js",
-    "static/js/2.0e7df2a0.chunk.js.map": "/wfh-mate/static/js/2.0e7df2a0.chunk.js.map",
+    "static/js/2.e7cff4cb.chunk.js": "/wfh-mate/static/js/2.e7cff4cb.chunk.js",
+    "static/js/2.e7cff4cb.chunk.js.map": "/wfh-mate/static/js/2.e7cff4cb.chunk.js.map",
     "index.html": "/wfh-mate/index.html",
-    "precache-manifest.0863a2be022d8f7ae69e25c3e6f0ae77.js": "/wfh-mate/precache-manifest.0863a2be022d8f7ae69e25c3e6f0ae77.js",
+    "precache-manifest.8eece1f5926c46049008e3d4cda63770.js": "/wfh-mate/precache-manifest.8eece1f5926c46049008e3d4cda63770.js",
     "service-worker.js": "/wfh-mate/service-worker.js",
     "static/css/2.00a338ba.chunk.css.map": "/wfh-mate/static/css/2.00a338ba.chunk.css.map",
-    "static/css/main.fbdd4534.chunk.css.map": "/wfh-mate/static/css/main.fbdd4534.chunk.css.map",
-    "static/js/2.0e7df2a0.chunk.js.LICENSE.txt": "/wfh-mate/static/js/2.0e7df2a0.chunk.js.LICENSE.txt",
+    "static/css/main.99df1309.chunk.css.map": "/wfh-mate/static/css/main.99df1309.chunk.css.map",
+    "static/js/2.e7cff4cb.chunk.js.LICENSE.txt": "/wfh-mate/static/js/2.e7cff4cb.chunk.js.LICENSE.txt",
     "static/media/mate.png": "/wfh-mate/static/media/mate.985ddc7d.png",
     "static/media/minus.svg": "/wfh-mate/static/media/minus.35493834.svg",
     "static/media/play.svg": "/wfh-mate/static/media/play.ef083f73.svg",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.492eb709.js",
     "static/css/2.00a338ba.chunk.css",
-    "static/js/2.0e7df2a0.chunk.js",
-    "static/css/main.fbdd4534.chunk.css",
-    "static/js/main.4c180c41.chunk.js"
+    "static/js/2.e7cff4cb.chunk.js",
+    "static/css/main.99df1309.chunk.css",
+    "static/js/main.29587add.chunk.js"
   ]
 }
