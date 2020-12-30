@@ -130,6 +130,7 @@ const WaterBreakTimer = () => {
         body="hey mate water break now"
         sound={WATER_TONE}
         showDesktopNotification = { isEnableNotification?showDesktopNotification:false }
+        isEnable = {  showDesktopNotification }
         resetValue = { resetValue }
       />
     </div>

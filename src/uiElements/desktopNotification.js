@@ -8,7 +8,8 @@ const DesktopNotification = ({
   sound,
   showDesktopNotification,
   resetValue,
-  timing=4000
+  timing=4000,
+  isEnable
 }) => {
 
   const options = {
@@ -31,7 +32,7 @@ const DesktopNotification = ({
     <div>
       {
        <Notification
-        ignore ={!showDesktopNotification}
+        ignore ={!isEnable}
         askAgain = {true}
         onShow={handleOnShow}
         onPermissionDenied = {onPermissionDenied}
