@@ -3,6 +3,7 @@ import WorkTimer from './components/workTimer';
 import BreakTimer from './components/breakTimer';
 import WaterBreakTimer from './components/waterBreakTimer';
 import Note from './components/note';
+import Footer from './components/footer';
 import './App.css';
 
 const App=()=> {
@@ -17,6 +18,9 @@ const App=()=> {
           <p className="clear-note">*only this part will reset during page refresh</p>
         </div>
        </div>
+       <footer className="footer">
+        <Footer/>
+       </footer>
      </div>
   );
 }

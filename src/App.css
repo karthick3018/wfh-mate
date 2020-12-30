@@ -29,3 +29,12 @@
   opacity: 0.5;
   font-size: 10px;
 }
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 300px;
+  margin-left: 300px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
