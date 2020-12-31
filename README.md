@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ### wfh-mate description: 
 Since work from home is the current and upcoming methodology we're following and going to follow in the future. These are the some of things that i've used in the work from home methodology, so let this wfh-mate help our mates too....
 
