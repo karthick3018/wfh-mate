@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import {Helmet} from "react-helmet";
+import { message } from 'antd';
 import Calender from '../../components/calender';
 import ModalAtom from '../../uiElements/modal';
 import useTimer from '../../hooks/useTimer';
@@ -17,6 +18,7 @@ const WorkTimer=()=> {
 
 
   const handleStartClick = () => {
+    message.info('Work timer started ! Start water timer too!');
     setStartClicked(true);
     setState(new Date().toLocaleTimeString())
     setStartTime(new Date().toLocaleTimeString())

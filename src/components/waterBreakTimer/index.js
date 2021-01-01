@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import {message} from 'antd';
 import {WATER_TONE} from '../../helpers/sounds';
 import Switch from '../../uiElements/switch';
 import DesktopNotification from '../../uiElements/desktopNotification';
@@ -73,6 +74,7 @@ const WaterBreakTimer = () => {
     setWaterBreakStartClicked(true);
     setState(waterBreakTime);
     handleSetInterval();
+    message.info('Water break remainder started !');
   }
 
   const handleEnd = () => {

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import Switch from '../../uiElements/switch';
-import { Tooltip } from 'antd';
+import { Tooltip,message } from 'antd';
 import ProgressBar from '../../uiElements/progress';
 import {ALARM_TONE} from '../../helpers/sounds';
 import DesktopNotification from '../../uiElements/desktopNotification';
@@ -84,6 +84,8 @@ const BreakTimer = () => {
   }
 
   const handleStart = () => {
+    message.info(`${breakTime?.minutes} min break started!`);
+
     setBreakStartClicked(!isBreakStartClicked);
     setState(breakTime)
     setTotalBreakTiming(breakTime?.minutes)
