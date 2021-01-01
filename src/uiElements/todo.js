@@ -46,7 +46,13 @@ const TodoElement = () => {
         return(
          <div className="todo-elements" key={eachTodoItems?.id}>
           <Checkbox className="todo-checkbox" onChange={()=>handleCheckBoxChange(i)} checked={eachTodoItems?.completed} />
-          <input autoFocus className="todo-input" onKeyDown={(e)=>handleKeyPress(e,i)} onChange={(e)=>handleTextChange(e,i)} value={eachTodoItems?.todoText}/>
+          <input 
+           autoFocus 
+           className="todo-input"
+           placeholder ={i===0?'Add a task':''}
+           onKeyDown={(e)=>handleKeyPress(e,i)} 
+           onChange={(e)=>handleTextChange(e,i)} 
+           value={eachTodoItems?.todoText}/>
          </div>
         )
       })}
