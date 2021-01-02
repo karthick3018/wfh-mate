@@ -6,6 +6,10 @@
   box-shadow: 8px 10px 15px #43144c, -10px -10px 15px #0000;
 }
 
+.calender-wrapper:hover{
+  cursor: pointer;
+}
+
 .calender-inner-wrapper{
   border-radius: 35px;
   background: #eef0f4;
