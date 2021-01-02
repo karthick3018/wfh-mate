@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import WorkTimer from './components/workTimer';
 import BreakTimer from './components/breakTimer';
 import WaterBreakTimer from './components/waterBreakTimer';
@@ -7,6 +7,13 @@ import Footer from './components/footer';
 import './App.css';
 
 const App=()=> {
+  useEffect(()=>{
+    Notification.requestPermission().then(function(permission) {
+      if(permission === 'denied'){
+        alert('Allow notification in site settings to achieve the functionality!')
+      } 
+  })
+  },[])
   return (
      <div className="main-wrapper">
        <div className="components-wrapper">

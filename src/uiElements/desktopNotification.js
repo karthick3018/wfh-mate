@@ -9,7 +9,6 @@ const DesktopNotification = ({
   showDesktopNotification,
   resetValue,
   timing=4000,
-  isEnable
 }) => {
 
   const options = {
@@ -30,9 +29,8 @@ const DesktopNotification = ({
 
   return (
     <div>
-      {
+      {showDesktopNotification &&
        <Notification
-        ignore ={!isEnable}
         askAgain = {true}
         onShow={handleOnShow}
         onPermissionDenied = {onPermissionDenied}
