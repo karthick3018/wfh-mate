@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {Helmet} from "react-helmet";
 import { message } from 'antd';
 import Calender from '../../components/calender';
@@ -14,6 +14,12 @@ const WorkTimer=()=> {
   const [state,setStartTime] = useTimer(existingValue,isStartClicked);
   const [isModalOpen,setModalVisible] = useState(false);
   const date = new Date()
+
+  useEffect(() => {
+    if(state?.hours < 0){
+      handleEndClick()
+    }
+  }, [state])
 
 
 
@@ -45,6 +51,7 @@ const WorkTimer=()=> {
          <div className="control-button-inner">Start Work</div>
        </div>
        <p className="timer">
+         {console.log('state',state)}
          <span className="timer-element">{state?.hours< 10 ? `${0}${state?.hours}`: state?.hours}</span>
          <span className="timer-element">{state?.minutes< 10 ? `${0}${state?.minutes}`: state?.minutes}</span>
          <span className="timer-element">{state?.seconds< 10 ? `${0}${state?.seconds}`: state?.seconds}</span>
