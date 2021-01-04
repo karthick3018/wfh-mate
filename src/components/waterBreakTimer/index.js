@@ -41,7 +41,7 @@ const WaterBreakTimer = () => {
    waterTimerSetIntervalTime=setInterval(function(){
        setDesktopNotification(true) 
        setState({
-         minutes:19,seconds:59
+         minutes:waterBreakTime?.minutes-1,seconds:59
        })
       }, waterBreakTime?.minutes * 60000);
   }
