@@ -1,8 +1,9 @@
-### wfh-mate description: 
+# wfh-mate description: 
 Since work from home is the current and upcoming methodology we're following and going to follow in the future. Managing time,taking a break,intake of water these are the some of things that i've used in the work from home methodology, so let this wfh-mate help our mates too....
 
+```No Backend No Server ! Just browser and React ```
 
-### wfh-mate helps you with:
+# wfh-mate helps you with:
 
 1. Measure your working time.
 2. Make your notes.
@@ -13,14 +14,17 @@ Since work from home is the current and upcoming methodology we're following and
 7. Allows you to follow 20-20-20 rule (Take a 20 second break! Look at a 20 feet object for 20 seconds).
 8. Finally show the total hours worked , total break taken.
 
-### wfh-mate components : 
+# wfh-mate components : 
 wfh-mate has 3 components where all the functionalities relay , 
 
 ## Work timer, calender
-# timer
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/l2liexgh6tf715f6nmck.png)
+
+this layer has the start button to start the work for the day and end button to end the work at end of the day.
+### timer
 The timer updates each second and displays how long you've worked for the day. This can help you to finish your after the actual hours of work (8 hrs is official working time here!). After the time you can close your official work and start spending time for your personal things.
 
-# calendar
+### calendar
 This is one of the thing i've searched often. Even in the holidays i've logged-in to the office system since I don't know what day it is ! So wfh-mate has a calendar that displays the current date,month and formatted date. You can click that to get the detailed calendar.
 
 ## 2.Notes & todo's 
@@ -39,6 +43,11 @@ Here comes the most important part or the main line based on which i've created 
 
 so how many of u following this ? myself not ! so this timer can execute every 20/30 minutes and remain you to intake water. Using that break make sure you're drinking the above mentioned level.
 
-# 20-20-20 rule!
+_this part reset's during page refresh/reload so restart once if you do refresh/reloaded the page_
+
+## 20-20-20 rule!
 Ever heard of this rule ? this is the one we need to follow to avoid *CVS (Computer Vision Syndrome)*  stress caused to eyes by looking at the monitor for a long time.
 So here 20-20-20 rule comes to play _every 20 mins take a break for 20 seconds and look at a 20 feet away object_. Whenever the water break alerts , you can follow this rule too! 
+
+## Output
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/2ycrah0j26p11gtq2gby.gif)
