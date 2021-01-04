@@ -21,7 +21,7 @@ const ProgressBar = ({time:{hours=0,minutes=0,seconds=0},totalTime,percent=0,wid
        type="circle"
        width = {width}
        strokeColor ={hours>9?'red':"#FFBDA3"}
-       format={() => `${hours? (hours<10? `0${hours}`:hours ):''}  ${minutes<10?`0${minutes}`:minutes}:${seconds<10?`0${seconds}`:seconds}`}
+       format={() => `${hours? (hours<10? `0${hours}:`:`${hours}:` ):''}  ${minutes<10?`0${minutes}`:minutes}:${seconds<10?`0${seconds}`:seconds}`}
       />
     </div>
   )
