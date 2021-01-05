@@ -34,7 +34,7 @@ const DesktopNotification = ({
         askAgain = {true}
         onShow={handleOnShow}
         onPermissionDenied = {onPermissionDenied}
-        timeout={4000}
+        timeout={6000}
         title={title}
         options={options}
        />}
