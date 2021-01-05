@@ -3,6 +3,7 @@ Since work from home is the current and upcoming methodology we're following and
 
 ```No Backend No Server ! Just browser and React ```
 
+
 # wfh-mate helps you with:
 
 1. Measure your working time.
@@ -13,6 +14,8 @@ Since work from home is the current and upcoming methodology we're following and
 6. Remains you to take efficient water and stay hydrated.
 7. Allows you to follow 20-20-20 rule (Take a 20 second break! Look at a 20 feet object for 20 seconds).
 8. Finally show the total hours worked , total break taken.
+
+```Allow notification in browser before using wfh-mate```
 
 # wfh-mate components : 
 wfh-mate has 3 components where all the functionalities relay , 
@@ -43,11 +46,15 @@ Here comes the most important part or the main line based on which i've created 
 
 so how many of u following this ? myself not ! so this timer can execute every 20/30 minutes and remain you to intake water. Using that break make sure you're drinking the above mentioned level.
 
-_this part reset's during page refresh/reload so restart once if you do refresh/reloaded the page_
+```this part reset's during page refresh/reload so kindly restart the timer once if you do refresh/reloaded the page```
 
 ## 20-20-20 rule!
 Ever heard of this rule ? this is the one we need to follow to avoid *CVS (Computer Vision Syndrome)*  stress caused to eyes by looking at the monitor for a long time.
 So here 20-20-20 rule comes to play _every 20 mins take a break for 20 seconds and look at a 20 feet away object_. Whenever the water break alerts , you can follow this rule too! 
+
+# End stats
+Once you're done for the day you can press end task and that will give you the exact hours of work you've done after pressing the start work button along with a approx break time taken ! 
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/28ib5kc54egbbsizzby2.png)
 
 ## Output
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/2ycrah0j26p11gtq2gby.gif)
