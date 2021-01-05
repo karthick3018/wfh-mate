@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/wfh-mate/static/css/main.de43e725.chunk.css",
-    "main.js": "/wfh-mate/static/js/main.958ce96a.chunk.js",
-    "main.js.map": "/wfh-mate/static/js/main.958ce96a.chunk.js.map",
+    "main.js": "/wfh-mate/static/js/main.cfda18f1.chunk.js",
+    "main.js.map": "/wfh-mate/static/js/main.cfda18f1.chunk.js.map",
     "runtime-main.js": "/wfh-mate/static/js/runtime-main.492eb709.js",
     "runtime-main.js.map": "/wfh-mate/static/js/runtime-main.492eb709.js.map",
     "static/css/2.00a338ba.chunk.css": "/wfh-mate/static/css/2.00a338ba.chunk.css",
     "static/js/2.828f4d93.chunk.js": "/wfh-mate/static/js/2.828f4d93.chunk.js",
     "static/js/2.828f4d93.chunk.js.map": "/wfh-mate/static/js/2.828f4d93.chunk.js.map",
     "index.html": "/wfh-mate/index.html",
-    "precache-manifest.0250f9a7ae2c12fca56666886a4a0ad2.js": "/wfh-mate/precache-manifest.0250f9a7ae2c12fca56666886a4a0ad2.js",
+    "precache-manifest.24bb3edace37394fa7391f67e467276a.js": "/wfh-mate/precache-manifest.24bb3edace37394fa7391f67e467276a.js",
     "service-worker.js": "/wfh-mate/service-worker.js",
     "static/css/2.00a338ba.chunk.css.map": "/wfh-mate/static/css/2.00a338ba.chunk.css.map",
     "static/css/main.de43e725.chunk.css.map": "/wfh-mate/static/css/main.de43e725.chunk.css.map",
@@ -26,6 +26,6 @@
     "static/css/2.00a338ba.chunk.css",
     "static/js/2.828f4d93.chunk.js",
     "static/css/main.de43e725.chunk.css",
-    "static/js/main.958ce96a.chunk.js"
+    "static/js/main.cfda18f1.chunk.js"
   ]
 }
