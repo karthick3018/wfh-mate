@@ -1,5 +1,5 @@
 # wfh-mate description: 
-Since work from home is the current and upcoming methodology we're following and going to follow in the future. Managing time,taking a break,intake of water these are the some of things that i've used in the work from home methodology, so let this wfh-mate help our mates too....
+Since work from home is the current and upcoming methodology we're following and going to follow in the future. Managing time,taking a break,intake of water these are the some of things that i've thought difficult in the work from home methodology, so i've created the helper site to address these issues.
 
 ```No Backend No Server ! Just browser and React ```
 
