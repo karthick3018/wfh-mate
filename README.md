@@ -54,7 +54,9 @@ So here 20-20-20 rule comes to play _every 20 mins take a break for 20 seconds a
 
 # End stats
 Once you're done for the day you can press end task and that will give you the exact hours of work you've done after pressing the start work button along with a approx break time taken ! 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/28ib5kc54egbbsizzby2.png)
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/nds1vw5u6sdn58pc5jeu.png)
 
 ## Output
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/2ycrah0j26p11gtq2gby.gif)
+
+*wfh-mate illustration credits https://dribbble.com/creativemints
