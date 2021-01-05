@@ -18,6 +18,7 @@ const App=()=> {
      <div className="main-wrapper">
        <div className="components-wrapper">
         <WorkTimer />
+        <p className="clear-note-storage">*things relies on local storage .. no server !</p>
         <Note/>
         <div className="break-wrap">
           <BreakTimer />

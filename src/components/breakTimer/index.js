@@ -94,10 +94,13 @@ const BreakTimer = () => {
 
   const handleEnd = (fromIntervalFn=true) => {
     setBreakStartClicked(false);
-    timer({
-      breakTaken : fromIntervalFn ? state: breakTime,
-      totalBreak : breakTime?.minutes
-    })
+    if(isBreakStartClicked){
+      timer({
+        breakTaken : fromIntervalFn ? state: breakTime,
+        totalBreak : breakTime?.minutes
+      })
+    }
+  
     setState({
       seconds:0,
       minutes:breakTime?.minutes

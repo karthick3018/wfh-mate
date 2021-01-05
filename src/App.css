@@ -22,6 +22,14 @@
   border: 1px solid #f5e6f5;
 }
 
+.clear-note-storage{
+  position: absolute;
+  opacity: 0.5;
+  font-size: 10px;
+  bottom: 365px;
+  left: 575px;
+}
+
 .clear-note{
   position: absolute;
   bottom: -8px;
