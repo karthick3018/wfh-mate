@@ -7,13 +7,16 @@ import Footer from './components/footer';
 import './App.css';
 
 const App=()=> {
+
   useEffect(()=>{
-    Notification.requestPermission().then(function(permission) {
-      if(permission === 'denied'){
-        alert('Allow notification in site settings to achieve the functionality!')
-      } 
+      Notification.requestPermission() && Notification.requestPermission().then(function(permission) {
+        if(permission === 'denied'){
+          alert('Allow notification in site settings to achieve the functionality!')
+        }
   })
+  
   },[])
+
   return (
      <div className="main-wrapper">
        <div className="components-wrapper">
