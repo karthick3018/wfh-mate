@@ -56,3 +56,13 @@
 	-ms-transform: rotate(1deg);
 	transform: rotate(1deg);
 }
+
+@media screen and (max-width: 995px) {
+  .notify-text-water {
+    display: none;
+  }
+  .water-break-wrapper{
+    padding: 5px;
+    font-size: 14px;
+  }
+}

@@ -16,9 +16,10 @@ const WorkTimer=()=> {
   const date = new Date()
 
   useEffect(() => {
-    if(state?.minutes < 0){
-      handleEndClick()
+    if (state?.minutes < 0) {
+      handleEndClick();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state])
 
 

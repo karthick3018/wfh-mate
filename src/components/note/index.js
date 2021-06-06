@@ -8,20 +8,27 @@ const Note = () => {
   return (
     <div className="notes-wrapper">
       <div className="notify-text">
-        <p className="sticky-note-wrap sticky-note-blue sticky-note-wrap-text">Check how long u're working! Start,End Work button helps u to manage...</p>
-        <p className="sticky-note-wrap sticky-note-blue sticky-note-wrap-text">Don't test your memory skills in the list of work to do!! Have a todo list...</p>
+        <p className="sticky-note-wrap sticky-note-blue sticky-note-wrap-text">
+          Check how long u're working! Start,End Work button helps u to
+          manage...
+        </p>
+        <p className="sticky-note-wrap sticky-note-blue sticky-note-wrap-text">
+          Don't test your memory skills in the list of work to do!! Have a todo
+          list...
+        </p>
       </div>
-      <TextArea 
-       
-      />
-      <TodoElement/>
+      <TextArea />
+      <TodoElement />
+      <p className="clear-note-storage">
+        *things relies on local storage .. no server !
+      </p>
       <div className="mate-image-wrapper">
         <figure className="mate-figure">
           <img className="mate-img" src={mate} alt="mate" />
         </figure>
       </div>
     </div>
-  )
+  );
 }
 
 

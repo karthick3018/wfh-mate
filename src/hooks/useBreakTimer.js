@@ -45,8 +45,9 @@ const useBreakTimer = () => {
   }
 
   useEffect(() => {
-     let existingBreakTime = {...totalBreakTaken}
-      updateBreakTimer(existingBreakTime,state);
+    let existingBreakTime = { ...totalBreakTaken };
+    updateBreakTimer(existingBreakTime, state);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state])
 
   return [setState,setTotalBreakTiming]
