@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/wfh-mate/static/css/main.3fc943af.chunk.css",
-    "main.js": "/wfh-mate/static/js/main.a8ca8818.chunk.js",
-    "main.js.map": "/wfh-mate/static/js/main.a8ca8818.chunk.js.map",
+    "main.css": "/wfh-mate/static/css/main.19561911.chunk.css",
+    "main.js": "/wfh-mate/static/js/main.36f5cdfd.chunk.js",
+    "main.js.map": "/wfh-mate/static/js/main.36f5cdfd.chunk.js.map",
     "runtime-main.js": "/wfh-mate/static/js/runtime-main.492eb709.js",
     "runtime-main.js.map": "/wfh-mate/static/js/runtime-main.492eb709.js.map",
-    "static/css/2.00a338ba.chunk.css": "/wfh-mate/static/css/2.00a338ba.chunk.css",
-    "static/js/2.828f4d93.chunk.js": "/wfh-mate/static/js/2.828f4d93.chunk.js",
-    "static/js/2.828f4d93.chunk.js.map": "/wfh-mate/static/js/2.828f4d93.chunk.js.map",
+    "static/css/2.a9f9aa20.chunk.css": "/wfh-mate/static/css/2.a9f9aa20.chunk.css",
+    "static/js/2.f8b4923e.chunk.js": "/wfh-mate/static/js/2.f8b4923e.chunk.js",
+    "static/js/2.f8b4923e.chunk.js.map": "/wfh-mate/static/js/2.f8b4923e.chunk.js.map",
     "index.html": "/wfh-mate/index.html",
-    "precache-manifest.bf1f85f095c66da04e843a18674cfebc.js": "/wfh-mate/precache-manifest.bf1f85f095c66da04e843a18674cfebc.js",
+    "precache-manifest.7dc5a87ec5d79ba7643b7bcc10b203ec.js": "/wfh-mate/precache-manifest.7dc5a87ec5d79ba7643b7bcc10b203ec.js",
     "service-worker.js": "/wfh-mate/service-worker.js",
-    "static/css/2.00a338ba.chunk.css.map": "/wfh-mate/static/css/2.00a338ba.chunk.css.map",
-    "static/css/main.3fc943af.chunk.css.map": "/wfh-mate/static/css/main.3fc943af.chunk.css.map",
-    "static/js/2.828f4d93.chunk.js.LICENSE.txt": "/wfh-mate/static/js/2.828f4d93.chunk.js.LICENSE.txt",
+    "static/css/2.a9f9aa20.chunk.css.map": "/wfh-mate/static/css/2.a9f9aa20.chunk.css.map",
+    "static/css/main.19561911.chunk.css.map": "/wfh-mate/static/css/main.19561911.chunk.css.map",
+    "static/js/2.f8b4923e.chunk.js.LICENSE.txt": "/wfh-mate/static/js/2.f8b4923e.chunk.js.LICENSE.txt",
     "static/media/mate.png": "/wfh-mate/static/media/mate.985ddc7d.png",
     "static/media/minus.svg": "/wfh-mate/static/media/minus.35493834.svg",
     "static/media/play.svg": "/wfh-mate/static/media/play.ef083f73.svg",
@@ -23,9 +23,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.492eb709.js",
-    "static/css/2.00a338ba.chunk.css",
-    "static/js/2.828f4d93.chunk.js",
-    "static/css/main.3fc943af.chunk.css",
-    "static/js/main.a8ca8818.chunk.js"
+    "static/css/2.a9f9aa20.chunk.css",
+    "static/js/2.f8b4923e.chunk.js",
+    "static/css/main.19561911.chunk.css",
+    "static/js/main.36f5cdfd.chunk.js"
   ]
 }
