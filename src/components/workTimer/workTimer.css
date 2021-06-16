@@ -29,11 +29,13 @@ border: 1px solid rgba(0,0,0,0.01);
 }
 
 .control-button{
-  border: 5px solid;
+  border: 5px solid #5f235a;
   border-radius: 50px;
   width: 100px;
   height: 100px;
   font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: rgb(0 0 0 / 7%) 0px 1px 2px, rgb(0 0 0 / 7%) 0px 2px 4px, rgb(0 0 0 / 7%) 0px 4px 8px, rgb(0 0 0 / 7%) 0px 8px 16px, rgb(0 0 0 / 7%) 0px 16px 32px, rgb(0 0 0 / 7%) 0px 32px 64px;
 }
 
 .control-button:hover:after {
