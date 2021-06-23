@@ -46,7 +46,7 @@ Here comes the most important part or the main line based on which i've created 
 
 so how many of u following this ? myself not ! so this timer can execute every 20/30 minutes and remain you to intake water. Using that break make sure you're drinking the above mentioned level.
 
-*Keep System awake*
+## Keep System awake
 Supports currently on chrome. Helps you to keep the system awake until the specified break time. It runs based on the **wakeLock** api. 
 
 _*do not move to other tabs or apps after turning on the keep system awake switch to keep it work perfectly_
