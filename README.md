@@ -51,7 +51,7 @@ Supports currently on chrome. Helps you to keep the system awake until the speci
 
 _*do not move to other tabs or apps after turning on the keep system awake switch to keep it work perfectly_
 
-```this part reset's during page refresh/reload so kindly restart the timer once if you do refresh/reloaded the page```
+```this part reset's during page refresh/reload so kindly restart the timer once, if you do refresh/reloaded the page```
 
 ## 20-20-20 rule!
 Ever heard of this rule ? this is the one we need to follow to avoid *CVS (Computer Vision Syndrome)*  stress caused to eyes by looking at the monitor for a long time.
